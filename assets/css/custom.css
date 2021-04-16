@@ -1,0 +1,58 @@
+/*
+global UI color palette
+*/
+:root {
+     --primaryColor: #ef6c01;
+     --secondaryColor: #bce4df;
+}
+
+.fa-drumstick-bite {
+     border-radius: 100%;
+     border: 3px solid black;
+     padding: 0.5em;
+     font-size: 2em;
+     color: var(--primaryColor);
+}
+
+body, #banner, #one, #two, #three {
+     background-image: none;
+     background-color: white;
+}
+
+input[type="submit"] {
+     background-color: var(--primaryColor);
+     color: white;
+}
+
+#menu {
+     background-color: rgba(0, 0, 0, 0.75);
+     color: white;
+}
+
+#menu .links li a {
+     color: white;
+}
+
+.close {
+     color: black;
+}
+
+header {
+     background-color: rgba(0, 0, 0, 0.75);
+     color: white;
+}
+
+.alt a {
+     color: black;
+}
+
+header a {
+     color: white;
+}
+
+.section-icon {
+     font-size: 4em;
+     border: 3px solid black;
+     padding: 0.5em;
+     border-radius: 50%;
+}
