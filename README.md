@@ -8,9 +8,12 @@ Pocket Grocer is a web application that empowers individuals, as well as those l
 4. Viewing commonly purchased grocery items for themselves and for the household
 
 ### Team members
-Fadel - Frontend developer
-Libby - Frontend developer
-Myka - Backend developer + Product Manager + User Testing
-Sophia - Backend developer + Product Manager + User Testing
-Shaurya - General developer
-Tushar - General developer
+1. Fadel - Frontend developer
+2. Libby - Frontend developer
+3. Myka - Backend developer + Product Manager + User Testing
+4. Sophia - Backend developer + Product Manager + User Testing
+5. Shaurya - General developer
+6. Tushar - General developer
+
+
+### Repository Layout
