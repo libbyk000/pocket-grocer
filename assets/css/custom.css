@@ -5,6 +5,10 @@ global UI color palette
      --primaryColor: #ef6c01;
      --secondaryColor: #bce4df;
      --backsplashColor: #f2f2f2;
+     --dividerColor: rgba(191, 191, 191, 0.75);
+     --expiredColor: #000000;
+     --warningColor: #eaba1a;
+     --notExpiredColor: #f5673f;
 }
 
 .fa-drumstick-bite {
@@ -63,17 +67,76 @@ input[type="text"], input[type="password"] {
      margin-top: 15px;
 }
 
-#login-btn {
+#login-btn, .button {
      background-color: var(--primaryColor);
      margin-top: 15px;
      margin-bottom: 15px;
      color: white;
 }
 
-#message a:link, a:visited {
+.message a:link, a:visited {
      color: var(--primaryColor);
 }
 
 .error {
      color:red;
+}
+
+.alt > li {
+     border-bottom: solid 2px var(--dividerColor);
+}
+
+.dot {
+     height: 25px;
+     width: 25px;
+     border-radius: 50%;
+     display: inline-block;
+     float:right;
+     top:50%;
+}
+
+.expired {
+     background-color: var(--expiredColor);
+}
+
+.expired-warning {
+     background-color: var(--warningColor);
+}
+
+.not-expired {
+     background-color: var(--notExpiredColor);
+}
+
+.navbar {
+     background-color: white;
+     overflow: hidden;
+     position: fixed;
+     bottom: 0;
+     width: 100%;
+     display: flex;
+     flex-direction: row;
+}
+   
+/* Style the links inside the navigation bar */
+.navbar a {
+     float: center;
+     display: block;
+     color: var(--expiredColor);
+     text-align: center;
+     padding: 14px 15%;
+     text-decoration: none;
+     font-size: 17px;
+     justify-content: stretch;
+}
+
+/* Change the color of links on hover */
+.navbar a:hover {
+     background-color: var(--secondaryColor);
+     color: black;
+}
+
+/* Add a color to the active/current link */
+.navbar a.active {
+     background-color: var(--primaryColor);
+     color: white;
 }
