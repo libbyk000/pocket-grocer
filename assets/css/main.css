@@ -2253,7 +2253,7 @@ input, select, textarea {
 			input[type="radio"] + label:before {
 				background: rgba(255, 255, 255, 0.025);
 				border-radius: 5px;
-				border: solid 2px rgba(255, 255, 255, 0.125);
+				border: solid 2px var(--dividerColor);
 				content: '';
 				display: inline-block;
 				font-size: 0.8em;

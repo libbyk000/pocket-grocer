@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>All Items</title>
+		<title>Add Item</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -43,61 +43,48 @@
 					<section id="wrapper">
 						<div class="wrapper">
 							<div class="inner">
-
-								<!-- TODO: Sort/Filter and Show Days-->
-								<!--
-								<section>
-									<ul class="actions">
-										<li><a href="#" class="button primary icon solid fa-download">Sort/Filter</a></li>
-										<li><a href="#" class="button icon solid fa-download">Show Days</a></li>
-									</ul>
-								</section>
-								-->
-
 								<section>
 									<h3 class=major>Add Item</h3>
-									<div class="row">
+									<section>
+										<form method="post" action="#">
+											<div class="row gtr-uniform">
+												<div class="col-12">
+													<label for="item-name">Item Name</label>
+													<input type="text" name="item-name" id="item-name" value="">
+												</div>
+												<!-- TODO: Add date selector for expiration date -->
+												
+												<div class="col-12">
+													<label>Storage Location</label>
+												</div>
+												<div class="col-6 col-12-xsmall">
+													<input type="radio" id="refrigerator-tag" name="refrigerator-tag">
+													<label for="refrigerator-tag">Refrigerator</label>
+												</div>
+												<div class="col-6 col-12-xsmall">
+													<input type="radio" id="pantry-tag" name="pantry-tag">
+													<label for="pantry-tag">Pantry</label>
+												</div>
 
-										<div class="col-6 col-12-medium">
-											<h4>Refrigerator</h4>
-											<ul class="alt">
-												<li>
-													Cheese 
-													<span class="dot expired"></span>
-												</li>
-												<li>
-													Spinach
-													<span class="dot expired-warning"></span>
-												</li>
-												<li>
-													Milk
-													<span class="dot not-expired"></span>
-												</li>
-											</ul>
-										</div>
-
-										<div class="col-6 col-12-medium">
-											<h4>Pantry</h4>
-											<ul class="alt">
-												<li>
-													Apple 
-													<span class="dot expired-warning"></span>
-												</li>
-												<li>
-													Banana
-													<span class="dot expired-warning"></span>
-												</li>
-												<li>
-													Onion
-													<span class="dot expired"></span>
-												</li>
-												<li>
-													Cherry tomatoes
-													<span class="dot expired"></span>
-												</li>
-											</ul>
-										</div>
-									</div>
+												<div class="col-12">
+													<label>Sharability</label>
+												</div>
+												<div class="col-6 col-12-small">
+													<input type="radio" id="shared-tag" name="shared-tag">
+													<label for="shared-tag">Shared item</label>
+												</div>
+												<div class="col-6 col-12-small">
+													<input type="radio" id="personal-tag" name="personal-tag">
+													<label for="personal-tag">Personal item</label>
+												</div>
+												
+												<div class="col-12">
+													<ul class="actions">
+														<li><input type="submit" value="Confirm" class="primary"></li>
+													</ul>
+												</div>
+											</div>
+										</form>
 								</section>								  
 							</div>
 						</div>
