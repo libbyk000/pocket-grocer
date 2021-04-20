@@ -4,9 +4,9 @@ April 21st Status Report
 Navigate to ‘Weekly Status Reports’ on this page for detailed instructions:
 https://homes.cs.washington.edu/~rjust/courses/2021Spring/CSE403/project.html 
 
-Team report (status update for your TA, including an agenda for the project meeting).
+## **Team report**
 
-**Goals from the previous week**
+### **Goals from the previous week**
 
   **Backend**
   - Set up Azure (Tushar, Shuarya)
@@ -22,14 +22,14 @@ Team report (status update for your TA, including an agenda for the project meet
   - Start to implement welcome page, login page (Fadel), and all items page (Libby)
 
 
-**Progress and Issues**
+### **Progress and Issues**
 
   **Backend**
 
   **Frontend**
 
 
-**Goals for the following week**
+### **Goals for the following week**
 
   **Backend**
 
@@ -38,9 +38,9 @@ Team report (status update for your TA, including an agenda for the project meet
 April 22nd Project Meeting Agenda
  
  
-**_Contributions of individual team members_**
+## **_Contributions of individual team members_**
 
-**Last week’s plan**
+### **Last week’s plan**
 
   Libby: Work with Fadel and add mobile friendly template to repo, choose general CSS palette, start to implement the all items page
   
@@ -55,7 +55,7 @@ April 22nd Project Meeting Agenda
   Shuarya: Work on setting up a backend on Azure. Understand the database we would need to create for our project.
 
  
-**Progress**
+### **Progress**
 
   Libby:
   
@@ -69,7 +69,7 @@ April 22nd Project Meeting Agenda
   
   Shuarya: 
  
-**Next week’s plan**
+### **Next week’s plan**
 
   Libby:
   
