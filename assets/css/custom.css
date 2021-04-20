@@ -74,7 +74,7 @@ input[type="text"], input[type="password"], input[type="email"] {
      color: white;
 }
 
-.message a:link, a:visited {
+.message a:link, .message a:visited {
      color: var(--primaryColor);
 }
 
@@ -140,4 +140,8 @@ input[type="text"], input[type="password"], input[type="email"] {
 .navbar a.active {
      background-color: var(--primaryColor);
      color: white;
+}
+
+.smaller-header {
+     padding-top: 5%;
 }
