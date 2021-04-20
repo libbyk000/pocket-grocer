@@ -5,28 +5,28 @@ https://homes.cs.washington.edu/~rjust/courses/2021Spring/CSE403/project.html
 
 ## **Team report**
 
-### **Goals from the previous week**
+### **Goals from the previous week**  
 
-  **Backend**
+  #### **Backend**
   - 
 
 
-  **Frontend**
+  #### **Frontend**
   - 
 
 
 ### **Progress and Issues**
 
-  **Backend**
+  #### **Backend**
 
-  **Frontend**
+  #### **Frontend**
 
 
 ### **Goals for the following week**
 
-  **Backend**
+  #### **Backend**
 
-  **Frontend**
+  #### **Frontend**
  
 April 22nd Project Meeting Agenda
  
