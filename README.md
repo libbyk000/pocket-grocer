@@ -32,4 +32,3 @@ Pocket Grocer is a web application that empowers individuals, as well as those l
     * contains background images
 * reports
     * weekly reports
-    * 
