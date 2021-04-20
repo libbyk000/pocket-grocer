@@ -17,5 +17,19 @@ Pocket Grocer is a web application that empowers individuals, as well as those l
 
 
 ### Repository Layout
+* .github
+    * azure auto-build script
 * assets
+    * css
+        * stylesheets
+    * js
+        * scripts
+    * sass
+        * compiled css from original template (we don't edit this folder)
+    * webfonts
+        * font awesome fonts
+* images
+    * contains background images
+* reports
+    * weekly reports
     * 
