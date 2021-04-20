@@ -1,73 +1,60 @@
-
-________ Status Report
+______ Status Report
 
 Navigate to ‘Weekly Status Reports’ on this page for detailed instructions:
 https://homes.cs.washington.edu/~rjust/courses/2021Spring/CSE403/project.html 
 
-Team report (status update for your TA, including an agenda for the project meeting).
+## **Team report**
 
-**Goals from the previous week**
+### **Goals from the previous week**
+
+  **Backend**
+  - 
+
+
+  **Frontend**
+  - 
+
+
+### **Progress and Issues**
 
   **Backend**
 
   **Frontend**
 
-**Progress and Issues**
 
-  **Backend**
-
-  **Frontend**
-
-
-**Goals for the following week**
+### **Goals for the following week**
 
   **Backend**
 
   **Frontend**
  
-_________ Project Meeting Agenda
+April 22nd Project Meeting Agenda
  
  
-**_Contributions of individual team members_**
+## **_Contributions of individual team members_**
 
-**Last week’s plan**
+### **Last week’s plan**
 
-  Libby: 
-  
-  Fadel:
-  
-  Sophia:
-  
-  Myka:
-  
-  Tushar:
-  
-  Shuarya:
- 
-**Progress**
-
-  Libby:
-  
-  Fadel: 
-  
-  Sophia: 
-  
-  Myka: 
-  
+  Libby:  
+  Fadel:   
+  Sophia:  
+  Myka:  
   Tushar: 
-  
-  Shuarya: 
+  Shuarya:  
  
-**Next week’s plan**
+### **Progress** 
+  Libby:  
+  Fadel:  
+  Sophia:   
+  Myka:   
+  Tushar:   
+  Shuarya:  
+ 
+### **Next week’s plan**
 
-  Libby:
-  
-  Fadel: 
-  
-  Sophia: 
-  
-  Myka: 
-  
-  Tushar: 
-  
-  Shuarya:
+  Libby:  
+  Fadel:   
+  Sophia:   
+  Myka:   
+  Tushar:   
+  Shuarya:  
