@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Login</title>
+		<title>Sign Up</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -33,39 +33,59 @@
 							<ul class="links">
 								<li><a href="index.html">home</a></li>
 								<li><a href="login.html">log in</a></li>
-								<li><a href="signup.html">sign up</a></li>
+								<li><a href="#">sign up</a></li>
 							</ul>
 							<a href="#" class="close">close</a>
 						</div>
 					</nav>
-
-				<!-- Banner -->
-				<section id="banner">
+				
+				<!-- Wrapper -->
+				<div class="wrapper">
 					<div class="inner">
 						<!-- TODO: change this icon-->
 						<div class="logo">
 							<i class="fas fa-drumstick-bite"></i>
 						</div>
-						<h2>Welcome to Pocket Grocer!</h2>
+						<h2>Create your account!</h2>
 					</div>
-				</section>
-				
-				<!-- Wrapper -->
-				<div class="wrapper">
+
+					<!-- Sign up Form -->
 					<div class="inner">
+						<section>
+							<form method="post" action="#">
+								<div class="row gtr-uniform">
+									<div class="col-6 col-12-xsmall">
+										<label for="first-name">First Name</label>
+										<input type="text" name="first-name" id="first-name" value="">
+									</div>
+									<div class="col-6 col-12-xsmall">
+										<label for="last-name">Last Name</label>
+										<input type="text" name="last-name" id="last-name" value="">
+									</div>
+									<div class="col-12">
+										<label for="demo-email">Email</label>
+										<input type="email" name="demo-email" id="demo-email" value="">
+									</div>
+									<div class="col-6 col-12-xsmall">
+										<label for="password">Password</label>
+										<input type="password" name="password" id="password">
+									</div>
+									<div class="col-6 col-12-small">
+										<label for="confirm-password">Confirm Password</label>
+										<input type="password" name="confirm-password" id="confirm-password">
+									</div>
+									<div class="col-12">
+										<ul class="actions">
+											<li><input type="submit" value="Next" class="primary"></li>
+										</ul>
+									</div>
+								</div>
+							</form>
+						</section>
 						
-						<!-- Email/Password Form -->
-						<input type="text" placeholder="Email" id="email" />	
-						<span class="error" id="email-error"></span>
-
-						<input type="password" placeholder="Password" id="password" />
-						<span class="error" id="password-error"></span>
-
-						<button class="button primary fit" id="login-btn">login</button>
-						<p class="message">Not registered? <a href="#">Create an account</a></p>
 					</div>
 				</div>
-						
+		
 				<!-- Footer -->
 					<section id="footer">
 						<div class="inner">

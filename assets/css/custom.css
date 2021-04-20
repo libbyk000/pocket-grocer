@@ -62,7 +62,7 @@ header a {
      border-radius: 50%;
 }
 
-input[type="text"], input[type="password"] {
+input[type="text"], input[type="password"], input[type="email"] {
      background-color: var(--backsplashColor);
      margin-top: 15px;
 }
@@ -123,10 +123,11 @@ input[type="text"], input[type="password"] {
      display: block;
      color: var(--expiredColor);
      text-align: center;
-     padding: 14px 15%;
+     padding: 14px;
      text-decoration: none;
      font-size: 17px;
      justify-content: stretch;
+     flex: 1;
 }
 
 /* Change the color of links on hover */
