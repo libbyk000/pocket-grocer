@@ -32,5 +32,9 @@ Pocket Grocer is a web application that empowers individuals, as well as those l
     * contains background images
 * reports
     * weekly reports
-* backend
-    * All of the backend folders and files will be added here
+* backend (RESTful API for CRUD (Create, Retrieve, Update, Delete) operations using Spring Boot and Azure SQL Database)
+    * spring (to send/recieve HTTP requests to/from the frontend)
+        * .java assets
+    * JDBC (to interact with the Azure SQL database)
+        * .java assets
+    * server files
