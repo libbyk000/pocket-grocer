@@ -7,14 +7,14 @@ https://homes.cs.washington.edu/~rjust/courses/2021Spring/CSE403/project.html
 
 ### **Goals from the previous week**  
 
-  #### **Backend**  
+#### **Backend**  
 - Set up Azure (Tushar, Shuarya)
 - Create outline for the tables and data contained in the tables (Sophia)
 - Incorporate the list of groceries (Myka)
 - Add all of the necessary files to the git repo
 
 
-  #### **Frontend**
+#### **Frontend**
 - Find/add mobile optimized template to repo (Libby)
 - Get skeleton code for all the pages set up (Libby)
 - Create general CSS/Choose a global UI palette (Libby)
