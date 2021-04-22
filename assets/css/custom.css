@@ -149,3 +149,12 @@ input[type="text"], input[type="password"], input[type="email"], input[type="dat
 .smaller-header {
      padding-top: 5%;
 }
+
+#filter-container {
+     display: flex;
+     justify-content: space-between;
+}
+
+#filter-container > button.fit {
+     width: 48%;
+}
