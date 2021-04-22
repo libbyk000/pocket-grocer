@@ -91,10 +91,16 @@ input[type="text"], input[type="password"], input[type="email"], input[type="dat
      width: 25px;
      border-radius: 50%;
      display: inline-block;
-     float:right;
-     top:50%;
+     top: 50%;
+     float: right;
 }
 
+.dotleft {
+     float: left;
+     margin-right: 10px;
+}
+
+/* Expiration Circles for Items Page */
 .expired {
      background-color: var(--expiredColor);
 }
@@ -107,6 +113,7 @@ input[type="text"], input[type="password"], input[type="email"], input[type="dat
      background-color: var(--notExpiredColor);
 }
 
+/* Bottom Sticky Navigation Bar */
 .navbar {
      background-color: white;
      overflow: hidden;
@@ -117,7 +124,6 @@ input[type="text"], input[type="password"], input[type="email"], input[type="dat
      flex-direction: row;
 }
    
-/* Style the links inside the navigation bar */
 .navbar a {
      float: center;
      display: block;
@@ -130,13 +136,11 @@ input[type="text"], input[type="password"], input[type="email"], input[type="dat
      flex: 1;
 }
 
-/* Change the color of links on hover */
 .navbar a:hover {
      background-color: var(--secondaryColor);
      color: black;
 }
 
-/* Add a color to the active/current link */
 .navbar a.active {
      background-color: var(--primaryColor);
      color: white;

@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Account</title>
+		<title>Item</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -44,51 +44,59 @@
 						<div class="wrapper">
 							<div class="inner">
 								<section>
-									<h3 class=major>Account Information</h3>
-									<div class="row">
-										<div class="col-6 col-12-medium">
-											<h4>First Name</h4>
-											<p> Libby</p>
-										</div>
-										<div class="col-6 col-12-medium">
-											<h4>Last Name</h4>
-											<p> Knell</p>
-										</div>
-										<div class="col-6 col-12-medium">
-											<h4>Email</h4>
-											<p> lknell@uw.edu</p>
-										</div>
-										<div class="col-6 col-12-medium">
-											<h4>Current Housemates</h4>
-											<!-- TODO Add swipe to delete -->
-											<ul class="alt">
-												<li>
-													Sophia Sevier
-												</li>
-												<li>
-													Myka Sheldon
-												</li>
-											</ul>
-										</div>
-										<div class="col-6 col-12-medium">
-											<!-- TODO: Enable on click -->
-											<button class="button primary fit icon solid fas fa-user-plus" id="add-housemate-btn">Add User to Household</button>
-										</div>
-									</div>
+									<h3 class=major>Chicken</h3>
+									<section>
+											<div class="row gtr-uniform">
+												
+												<div class="col-12">
+													<h4>Item Purchaser</h4>
+													<p>Libby</p>
+												</div>
 
-									
-									
+												<!-- Expiration Date -->
+												<div class="col-12">
+													<h4>Expiration Date</h4>
+													<p>
+														APRIL 30 2021 
+														<span class="dot expired-warning dotleft"></span>
+													</p> 
+													
+												</div>
+
+												<!-- Storage Location -->
+												<div class="col-12">
+													<h4>Storage Location</h4>
+													<p>Refrigerator</p>
+												</div>
+
+												<!-- Category -->
+												<div class="col-12">
+													<h4>Item Category</h4>
+													<p>Meat</p>
+												</div>
+
+												<!-- Sharability -->
+												<div class="col-12">
+													<label>Sharability</label>
+												</div>
+												<!-- TODO: Decide how we want to enable switching from shared to not shared - toggle? -->
+												<div class="col-6 col-12-small">
+													<input type="radio" id="shared-tag" name="sharability" disabled>
+													<label for="shared-tag">Shared item</label>
+												</div>
+												<div class="col-6 col-12-small">
+													<input type="radio" id="personal-tag" name="sharability" checked>
+													<label for="personal-tag">Personal item</label>
+												</div>
+												
+												<div class="col-12">
+													<button class="button primary fit" id="close-item-btn">Close</button>
+												</div>
+											</div>
 								</section>								  
 							</div>
 						</div>
 					</section>
-					
-				<!-- Sticky Bottom Navigation Bar -->
-				<div class="navbar">
-					<a href="items.html"><i class="fas fa-list"></i></a>
-					<a href="addItem.html"><i class="fas fa-plus"></i></a>
-					<a href="account.html" class="active"><i class="far fa-user"></i></a>
-				</div>
 
 				<!-- Footer -->
 					<section id="footer">
