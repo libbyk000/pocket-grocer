@@ -62,7 +62,7 @@ header a {
      border-radius: 50%;
 }
 
-input[type="text"], input[type="password"], input[type="email"] {
+input[type="text"], input[type="password"], input[type="email"], input[type="date"], select {
      background-color: var(--backsplashColor);
      margin-top: 15px;
 }
