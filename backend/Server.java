@@ -19,15 +19,17 @@ public class Server {
             String firstName = request.queryParams("FirstName");
             String lastName = request.queryParams("LastName");
             String password = request.queryParams("Password");
-            String groupID = request.queryParams("GroupID");
+
             try {
                 // do sth here
                 if () { // if user already exisst in db
+                    private static final String CHECK_FLIGHT_CAPACITY = "SELECT capacity FROM Flights WHERE fid = ?";
                     response.status(400);
                     return ("User already exists");
                 } else { // if user is successfully registered
+                    // call sth to put data into db
                     response.status(200) // success
-                    return gson.toJson(); // return sth?
+                    return ("Success"); // return sth?
                 }
             } catch (Exception e) {
                 response.status(400); // error
