@@ -23,13 +23,13 @@ public class Server {
 
             try {
                 // do sth here
-                if () { // if user already exisst in db
+                if (true) { // if user already exisst in db
                     // private static final String CHECK_FLIGHT_CAPACITY = "SELECT capacity FROM Flights WHERE fid = ?";
                     response.status(400);
                     return ("User already exists");
                 } else { // if user is successfully registered
                     // call sth to put data into db
-                    response.status(200) // success
+                    response.status(200); // success
                     return ("Success"); // return sth?
                 }
             } catch (Exception e) {
