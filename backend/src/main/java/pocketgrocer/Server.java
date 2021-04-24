@@ -1,19 +1,14 @@
-package src.main.java.pocketgrocer;
+package pocketgrocer;
 
-import src.main.java.pocketgrocer.utils.CORSFilter;
 import com.google.gson.Gson;
 import static spark.Spark.*;
 
 public class Server {
     public static void main(String[] args) {
-        // allows other applications to make requests to the Spark server
-        // https://stackoverflow.com/questions/45295530/spark-cors-access-control-allow-origin-error
-        CORSFilter corsFilter = new CORSFilter();
-        corsFilter.apply();
-
         // Java serialization/deserialization library to convert Java Objects into JSON and back
         // https://github.com/google/gson
         Gson gson = new Gson();
+        Query query = new Query();
 
         // Spark HTTP Endpoints¸
         post("/users/add", (request, response) -> {
@@ -22,10 +17,8 @@ public class Server {
             String lastName = request.queryParams("LastName");
             String password = request.queryParams("Password");
 
-            String map = request.queryMap();
-
-
             try {
+
                 // do sth here
                 if (true) { // if user already exisst in db
                     // private static final String CHECK_FLIGHT_CAPACITY = "SELECT capacity FROM Flights WHERE fid = ?";

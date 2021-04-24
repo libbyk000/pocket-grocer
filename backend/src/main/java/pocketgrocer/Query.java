@@ -1,4 +1,4 @@
-package src.main.java.pocketgrocer;
+package pocketgrocer;
 
 import java.io.*;
 import java.sql.*;
@@ -17,7 +17,7 @@ public class Query {
 
     static {
         System.setProperty("java.util.logging.SimpleFormatter.format", "[%4$-7s] %5$s %n");
-        log =Logger.getLogger(Query.class.getName());
+        log = Logger.getLogger(Query.class.getName());
     }
 
     public static void main(String[] args) throws Exception {
