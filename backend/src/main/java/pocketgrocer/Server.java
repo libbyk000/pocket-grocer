@@ -1,6 +1,6 @@
 package src.main.java.pocketgrocer;
 
-import main.java.pocketgrocer.utils.CORSFilter;
+import src.main.java.pocketgrocer.utils.CORSFilter;
 import com.google.gson.Gson;
 import static spark.Spark.*;
 
