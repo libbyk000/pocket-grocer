@@ -1,5 +1,6 @@
 import pocketgrocer.utils.CORSFilter;
 import com.google.gson.Gson;
+// https://sparkjava.com
 import spark.Spark;
 
 public class Server {
@@ -23,7 +24,7 @@ public class Server {
             try {
                 // do sth here
                 if () { // if user already exisst in db
-                    private static final String CHECK_FLIGHT_CAPACITY = "SELECT capacity FROM Flights WHERE fid = ?";
+                    // private static final String CHECK_FLIGHT_CAPACITY = "SELECT capacity FROM Flights WHERE fid = ?";
                     response.status(400);
                     return ("User already exists");
                 } else { // if user is successfully registered
@@ -35,6 +36,6 @@ public class Server {
                 response.status(400); // error
                 return (e);
             }
-        }
+        });
     }
 }

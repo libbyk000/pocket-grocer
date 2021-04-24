@@ -1,3 +1,5 @@
+compile "com.sparkjava:spark-core:2.9.3"
+
 task runSpark(type: JavaExec) {
     group = "pg"
     main = "backend/Server"
