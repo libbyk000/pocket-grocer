@@ -9,7 +9,7 @@
  * author.
  */
 
-package pocketgrocer.utils;
+package main.java.pocketgrocer.utils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import spark.Filter;
@@ -70,7 +70,7 @@ public class CORSFilter {
         };
         Spark.afterAfter(filter); // Applies this filter even if there's a halt() or exception.
         //
-        Logger logger = LoggerFactory.getLogger("CampusPaths Server");
+        Logger logger = LoggerFactory.getLogger("CampusPaths main.java.Server");
         logger.info("Listening on: http://localhost:" + Spark.port());
     }
 }
