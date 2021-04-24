@@ -1,8 +1,8 @@
-package main.java.pocketgrocer;
+package src.main.java.pocketgrocer;
 
 import main.java.pocketgrocer.utils.CORSFilter;
 import com.google.gson.Gson;
-import spark.Spark;
+import static spark.Spark.*;
 
 public class Server {
     public static void main(String[] args) {
@@ -16,11 +16,14 @@ public class Server {
         Gson gson = new Gson();
 
         // Spark HTTP Endpoints¸
-        spark.get("/users/add", (request, response) -> {
+        post("/users/add", (request, response) -> {
             String username = request.queryParams("Username");
             String firstName = request.queryParams("FirstName");
             String lastName = request.queryParams("LastName");
             String password = request.queryParams("Password");
+
+            String map = request.queryMap();
+
 
             try {
                 // do sth here
