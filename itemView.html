@@ -57,7 +57,7 @@
 													<h4>Expiration Date</h4>
 													<p>
 														APRIL 30 2021 
-														<span class="dot expired-warning dotleft"></span>
+														<i class="fas fa-exclamation-circle expired-warning dotleft"></i>
 													</p> 
 													
 												</div>
@@ -76,10 +76,18 @@
 
 												<!-- Sharability -->
 												<div class="col-12">
-													<label>Sharability</label>
+													<label>Sharing</label>
+													<p>
+														Shared Item
+														<label class="switch">
+															<input type="checkbox">
+															<span class="slider round"></span>
+														</label>
+													</p>
+													
 												</div>
 												<!-- TODO: Decide how we want to enable switching from shared to not shared - toggle? -->
-												<div class="col-6 col-12-small">
+												<!-- <div class="col-6 col-12-small">
 													<input type="radio" id="shared-tag" name="sharability" disabled>
 													<label for="shared-tag">Shared item</label>
 												</div>
@@ -87,6 +95,10 @@
 													<input type="radio" id="personal-tag" name="sharability" checked>
 													<label for="personal-tag">Personal item</label>
 												</div>
+
+												-->
+
+												
 												
 												<div class="col-12">
 													<button class="button primary fit" id="close-item-btn">Close</button>
