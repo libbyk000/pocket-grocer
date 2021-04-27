@@ -46,8 +46,40 @@
 
 								<section id="filter-container">
 									<button class="button primary fit icon solid fas fa-sort-amount-down" id="sort-filter-btn">Sort/Filter</button>
+
+									<!-- The Modal -->
+									<div id="myModal" class="modal">
+
+										<!-- Modal content -->
+										<div class="modal-content">
+										<span class="close">&times;</span>
+
+										<!-- Sort -->
+										<h4>Sort by</h4>
+										<ul class="alt" id="sort-by-list">
+											<li>Alphabetical</li>
+											<li>Category</li>
+											<li>Expiration date (soonest first)</li>
+											<li>Expiration date (latest first)</li>
+										</ul>
+
+										<!-- Filter -->
+										<h4>Filter by</h4>
+										<ul class="alt" id="filter-by-list">
+											<li><i class="fas fa-check align-icon-left"></i> Personal items</li>
+											<li>Shared items</li>
+											<li>Expired items</li>
+											<li>Expiring soon items</li>
+										</ul>
+										<input class="button primary fit" type="submit" value="Confirm">
+
+									</div>
+									
+									</div>
 									<button class="button primary fit icon solid far fa-clock" id="days-btn">Show Days</button>
 								</section>
+
+								
 
 								<section>
 									<h3 class=major>All Items</h3>
@@ -67,6 +99,11 @@
 												<li>
 													Milk
 													<i class="not-expired fas fa-check-circle"></i>
+												</li>
+												<!-- This is an example of what it should look like when days are shown-->
+												<li>
+													French fries
+													<p class="align-text-right">15 days</p>
 												</li>
 											</ul>
 										</div>
