@@ -60,13 +60,14 @@
 										</div>
 										<div class="col-12">
 											<h4>Current Housemates</h4>
-											<!-- TODO Add swipe to delete -->
 											<ul class="alt">
 												<li>
 													Sophia Sevier
+													<span class="close">&times;</span>
 												</li>
 												<li>
 													Myka Sheldon
+													<span class="close">&times;</span>
 												</li>
 											</ul>
 										</div>
@@ -74,6 +75,21 @@
 											<!-- TODO: Enable on click -->
 											<button class="button primary fit icon solid fas fa-user-plus" id="add-housemate-btn">Add Housemate</button>
 										</div>
+
+										<!-- The Modal -->
+										<div id="add-housemate-modal" class="modal">
+
+											<!-- Modal content -->
+											<div class="modal-content">
+											<span class="close">&times;</span>
+
+											<div class="col-12">
+												<label for="housemate-email">Housemate email</label>
+												<input type="email" placeholder="Email" id="email" />	
+											</div>											
+											<input class="button primary fit" type="submit" value="Add">
+										</div>
+										
 									</div>
 
 									
