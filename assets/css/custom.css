@@ -156,6 +156,7 @@ input[type="text"], input[type="password"], input[type="email"], input[type="dat
 #filter-container {
      display: flex;
      justify-content: space-between;
+     margin-bottom: 0.5em;
 }
 
 #filter-container > button.fit {
