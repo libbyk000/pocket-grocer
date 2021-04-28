@@ -51,7 +51,7 @@
 												<div class="col-12">
 												<!-- Item Name -->
 													<label for="item-name">Item Name</label>
-													<input type="text" list="item-name" />
+													<input id="item-name-input" type="text" list="item-name" />
 													<datalist id="item-name">
 														<!-- TODO: Populate with recently bought items -->
 														<option>Three Layer Hummus</option>
@@ -73,11 +73,11 @@
 													<label>Storage Location</label>
 												</div>
 												<div class="col-6 col-12-xsmall">
-													<input type="radio" id="refrigerator-tag" name="storage">
+													<input type="radio" id="refrigerator-tag" name="storage" value="refrigerator">
 													<label for="refrigerator-tag">Refrigerator</label>
 												</div>
 												<div class="col-6 col-12-xsmall">
-													<input type="radio" id="pantry-tag" name="storage">
+													<input type="radio" id="pantry-tag" name="storage" value="pantry">
 													<label for="pantry-tag">Pantry</label>
 												</div>
 
@@ -99,19 +99,19 @@
 
 												<!-- Sharability -->
 												<div class="col-12">
-													<label>Sharability</label>
+													<label>Sharing</label>
 												</div>
 												<div class="col-6 col-12-small">
-													<input type="radio" id="shared-tag" name="sharability">
+													<input type="radio" id="shared-tag" name="sharing" value="shared">
 													<label for="shared-tag">Shared item</label>
 												</div>
 												<div class="col-6 col-12-small">
-													<input type="radio" id="personal-tag" name="sharability">
+													<input type="radio" id="personal-tag" name="sharing" value="personal">
 													<label for="personal-tag">Personal item</label>
 												</div>
 												
 												<div class="col-12">
-													<input class="button primary fit" type="submit" value="Confirm">
+													<input class="button primary fit" type="submit" value="add">
 												</div>
 											</div>
 										</form>
