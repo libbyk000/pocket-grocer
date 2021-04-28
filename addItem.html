@@ -51,7 +51,7 @@
 												<div class="col-12">
 												<!-- Item Name -->
 													<label for="item-name">Item Name</label>
-													<input id="item-name-input" type="text" list="item-name" />
+													<input id="item-name-input" type="text" list="item-name" required/>
 													<datalist id="item-name">
 														<!-- TODO: Populate with recently bought items -->
 														<option>Three Layer Hummus</option>
@@ -65,7 +65,7 @@
 												<!-- Expiration Date -->
 												<div class="col-12">
 													<label for="expiration-date">Expiration Date</label>
-													<input type="date" id="expiration-date" name="expiration-date" value="2020-01-01" min="2020-01-01" max="2022-12-31">
+													<input type="date" id="expiration-date" name="expiration-date" min="2020-01-01" max="2022-12-31" required>
 												</div>
 
 												<!-- Storage Location -->
@@ -73,18 +73,18 @@
 													<label>Storage Location</label>
 												</div>
 												<div class="col-6 col-12-xsmall">
-													<input type="radio" id="refrigerator-tag" name="storage" value="refrigerator">
+													<input type="radio" id="refrigerator-tag" name="storage" value="refrigerator" required>
 													<label for="refrigerator-tag">Refrigerator</label>
 												</div>
 												<div class="col-6 col-12-xsmall">
-													<input type="radio" id="pantry-tag" name="storage" value="pantry">
+													<input type="radio" id="pantry-tag" name="storage" value="pantry" required>
 													<label for="pantry-tag">Pantry</label>
 												</div>
 
 												<!-- Category -->
 												<div class="col-12">
 													<label for="item-category">Item Category</label>
-													<select name="item-category" id="item-category">
+													<select name="item-category" id="item-category" required>
 														<option value="-">-</option>
 														<option value="Beverages">Beverages</option>
 														<option value="Bread/Bakery">Bread/Bakery</option>
@@ -98,7 +98,7 @@
 												</div>
 
 												<!-- Sharability -->
-												<div class="col-12">
+												<!-- <div class="col-12">
 													<label>Sharing</label>
 												</div>
 												<div class="col-6 col-12-small">
@@ -108,6 +108,17 @@
 												<div class="col-6 col-12-small">
 													<input type="radio" id="personal-tag" name="sharing" value="personal">
 													<label for="personal-tag">Personal item</label>
+												</div> -->
+
+												<div class="col-12">
+													<label>Sharing</label>
+													<p>
+														Personal Item
+														<label class="switch">
+															<input type="checkbox" id="personal-checkbox">
+															<span class="slider round"></span>
+														</label>
+													</p>
 												</div>
 												
 												<div class="col-12">
