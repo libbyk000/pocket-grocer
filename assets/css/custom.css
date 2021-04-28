@@ -272,3 +272,8 @@ input:checked + .slider:before {
 .full-width {
      width: 100%;
 }
+
+.back-arrow {
+     color: var(--primaryColor);
+     font-size: 1.3em;
+}
