@@ -7,6 +7,11 @@
     function init() {
 
         populateContent();
+
+        let items = qsa('.item')
+        items.forEach(item => {
+            item.addEventListener('click', showItemView)
+        })
         id('days-btn').addEventListener('click', toggleExpirationView);
 
     }
@@ -15,6 +20,30 @@
      * fetch all current items in the pantry and refrigerator and display them on the page
      */
     function populateContent() {
+
+    }
+
+    /**
+     * navigate to the single item view
+     */
+    function showItemView() {
+        let purchaser = this.dataset.purchaser
+        let expiration = this.dataset.expiration
+        let location = this.dataset.location
+        let category = this.dataset.category
+        let sharing = this.dataset.sharing
+
+        let days = this.lastElementChild.dataset.days
+
+        let url = "itemView.html?item=" + this.firstElementChild.textContent
+        url += "&purchaser=" + purchaser
+        url += "&expiration=" + expiration
+        url += "&location=" + location
+        url += "&category=" + category
+        url += "&sharing=" + sharing
+        url += "&days=" + days
+
+        window.location.href = url
 
     }
 
@@ -56,15 +85,7 @@
         expirationIndicators.forEach(indicator => {
             indicator.innerHTML = "";
             let daysRemaining = parseInt(indicator.dataset.days)
-            let icon = gen('i');
-            icon.classList.add('fas');
-            if (daysRemaining <= 0) {
-                icon.classList.add('expired', 'fa-times-circle');
-            } else if (daysRemaining <= 3) {
-                icon.classList.add('expired-warning', 'fa-exclamation-circle');
-            } else { // daysRemaining >= 4
-                icon.classList.add('not-expired', 'fa-check-circle');
-            }
+            let icon = generateIcon(daysRemaining)
             indicator.appendChild(icon);
         })
     }

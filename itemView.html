@@ -12,6 +12,8 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<link rel="stylesheet" href="assets/css/custom.css" />
+		<script src="assets/js/helper.js"></script>
+		<script src="assets/js/itemView.js"></script>
 	</head>
 	<body class="is-preload">
 
@@ -50,15 +52,14 @@
 												
 												<div class="col-12">
 													<h4>Item Purchaser</h4>
-													<p>Libby</p>
+													<p id="purchaser">Libby</p>
 												</div>
 
 												<!-- Expiration Date -->
 												<div class="col-12">
 													<h4>Expiration Date</h4>
-													<p>
-														APRIL 30 2021 
-														<i class="fas fa-exclamation-circle expired-warning align-icon-left"></i>
+													<p id="expiration-container">
+														<span id="expiration">APRIL 30 2021 </span>
 													</p> 
 													
 												</div>
@@ -66,13 +67,13 @@
 												<!-- Storage Location -->
 												<div class="col-12">
 													<h4>Storage Location</h4>
-													<p>Refrigerator</p>
+													<p id="location">Refrigerator</p>
 												</div>
 
 												<!-- Category -->
 												<div class="col-12">
 													<h4>Item Category</h4>
-													<p>Meat</p>
+													<p id="category">Meat</p>
 												</div>
 
 												<!-- Sharability -->
@@ -81,7 +82,7 @@
 													<p>
 														Shared Item
 														<label class="switch">
-															<input type="checkbox">
+															<input id="sharing" disabled type="checkbox">
 															<span class="slider round"></span>
 														</label>
 													</p>

@@ -52,6 +52,10 @@ header {
      color: black;
 }
 
+.alt li {
+     cursor: pointer;
+}
+
 header a {
      color: white;
 }
