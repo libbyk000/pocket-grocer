@@ -47,3 +47,16 @@ function signOut() {
     }
     window.location = "/";
 }
+
+function generateIcon(daysRemaining) {
+    let icon = gen('i');
+    icon.classList.add('fas');
+    if (daysRemaining <= 0) {
+        icon.classList.add('expired', 'fa-times-circle');
+    } else if (daysRemaining <= 3) {
+        icon.classList.add('expired-warning', 'fa-exclamation-circle');
+    } else { // daysRemaining >= 4
+        icon.classList.add('not-expired', 'fa-check-circle');
+    }
+    return icon;
+}

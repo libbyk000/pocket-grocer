@@ -12,6 +12,8 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<link rel="stylesheet" href="assets/css/custom.css" />
+		<script src="assets/js/helper.js"></script>
+		<script src="assets/js/addItem.js"></script>
 	</head>
 	<body class="is-preload">
 
@@ -51,7 +53,7 @@
 												<div class="col-12">
 												<!-- Item Name -->
 													<label for="item-name">Item Name</label>
-													<input type="text" list="item-name" />
+													<input id="item-name-input" type="text" name="item-name" required/>
 													<datalist id="item-name">
 														<!-- TODO: Populate with recently bought items -->
 														<option>Three Layer Hummus</option>
@@ -65,7 +67,7 @@
 												<!-- Expiration Date -->
 												<div class="col-12">
 													<label for="expiration-date">Expiration Date</label>
-													<input type="date" id="expiration-date" name="expiration-date" value="2020-01-01" min="2020-01-01" max="2022-12-31">
+													<input type="date" id="expiration-date" name="expiration-date" min="2020-01-01" max="2022-12-31" required>
 												</div>
 
 												<!-- Storage Location -->
@@ -73,19 +75,19 @@
 													<label>Storage Location</label>
 												</div>
 												<div class="col-6 col-12-xsmall">
-													<input type="radio" id="refrigerator-tag" name="storage">
+													<input checked="true" type="radio" id="refrigerator-tag" name="storage" value="refrigerator">
 													<label for="refrigerator-tag">Refrigerator</label>
 												</div>
 												<div class="col-6 col-12-xsmall">
-													<input type="radio" id="pantry-tag" name="storage">
+													<input type="radio" id="pantry-tag" name="storage" value="pantry">
 													<label for="pantry-tag">Pantry</label>
 												</div>
 
 												<!-- Category -->
 												<div class="col-12">
 													<label for="item-category">Item Category</label>
-													<select name="item-category" id="item-category">
-														<option value="-">-</option>
+													<select name="item-category" id="item-category" required>
+														<option value="">-</option>
 														<option value="Beverages">Beverages</option>
 														<option value="Bread/Bakery">Bread/Bakery</option>
 														<option value="Canned/Jarred Goods">Canned/Jarred Goods</option>
@@ -98,20 +100,31 @@
 												</div>
 
 												<!-- Sharability -->
-												<div class="col-12">
-													<label>Sharability</label>
+												<!-- <div class="col-12">
+													<label>Sharing</label>
 												</div>
 												<div class="col-6 col-12-small">
-													<input type="radio" id="shared-tag" name="sharability">
+													<input type="radio" id="shared-tag" name="sharing" value="shared">
 													<label for="shared-tag">Shared item</label>
 												</div>
 												<div class="col-6 col-12-small">
-													<input type="radio" id="personal-tag" name="sharability">
+													<input type="radio" id="personal-tag" name="sharing" value="personal">
 													<label for="personal-tag">Personal item</label>
+												</div> -->
+
+												<div class="col-12">
+													<label>Sharing</label>
+													<p>
+														Personal Item
+														<label class="switch">
+															<input type="checkbox" id="personal-checkbox" name="is-personal">
+															<span class="slider round"></span>
+														</label>
+													</p>
 												</div>
 												
 												<div class="col-12">
-													<input class="button primary fit" type="submit" value="Confirm">
+													<input class="button primary fit" type="submit" value="add">
 												</div>
 											</div>
 										</form>

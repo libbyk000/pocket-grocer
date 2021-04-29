@@ -12,6 +12,9 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<link rel="stylesheet" href="assets/css/custom.css" />
+
+		<script src="assets/js/helper.js"></script>
+		<script src="assets/js/account.js"></script>
 	</head>
 	<body class="is-preload">
 
@@ -48,35 +51,47 @@
 									<div class="row">
 										<div class="col-6 col-12-medium">
 											<h4>First Name</h4>
-											<p> Libby</p>
+											<p>Libby</p>
 										</div>
 										<div class="col-6 col-12-medium">
 											<h4>Last Name</h4>
-											<p> Knell</p>
+											<p>Knell</p>
 										</div>
 										<div class="col-6 col-12-medium">
-											<h4>Email</h4>
-											<p> lknell@uw.edu</p>
+											<h4>Username</h4>
+											<p>squarecorgi</p>
 										</div>
 										<div class="col-12">
 											<h4>Current Housemates</h4>
-											<!-- TODO Add swipe to delete -->
 											<ul class="alt">
 												<li>
-													Sophia Sevier
+													Sophia Sevier - 
+													<span>ssevier</span>
+													<span class="remove-housemate close">&times;</span>
 												</li>
 												<li>
-													Myka Sheldon
+													Myka Sheldon - 
+													<span>mykas</span>
+													<span class="remove-housemate close">&times;</span>
 												</li>
 											</ul>
 										</div>
-										<div class="col-6 col-12-medium">
-											<!-- TODO: Enable on click -->
-											<button class="button primary fit icon solid fas fa-user-plus" id="add-housemate-btn">Add Housemate</button>
-										</div>
+										
 									</div>
 
-									
+									<h3 class=major>add a housemate</h3>
+									<div class="row">
+										<form method="post" action="#" class="full-width">
+											<div class="col-6 col-12-xsmall">
+												<label for="last-name">Username</label>
+												<input type="text" name="housemate-username" id="housemate-username" value="" required>
+											</div>
+											<div class="col-6 col-12-medium">
+												<!-- TODO: Enable on click -->
+												<button class="button primary fit icon solid fas fa-user-plus" id="add-housemate-btn">add</button>
+											</div>
+										</form>
+									</div>
 									
 								</section>								  
 							</div>
