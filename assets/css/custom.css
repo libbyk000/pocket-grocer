@@ -233,7 +233,6 @@ input:checked + .slider:before {
 
 /* The Modal (background) */
 .modal {
-     display: none; /* Hidden by default */
      position: fixed; /* Stay in place */
      z-index: 1; /* Sit on top */
      left: 0;
@@ -281,4 +280,12 @@ input:checked + .slider:before {
 .back-arrow {
      color: var(--primaryColor);
      font-size: 1.3em;
+}
+
+/*
+Leave this at the bottom of the page
+*/
+
+.hidden {
+     display: none;
 }

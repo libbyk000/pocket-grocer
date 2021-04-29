@@ -12,8 +12,19 @@
         items.forEach(item => {
             item.addEventListener('click', showItemView)
         })
-        id('days-btn').addEventListener('click', toggleExpirationView);
 
+        let sortings = qsa('#sort-by-list li');
+        sortings.forEach(el => {
+            el.addEventListener('click', itemSort)
+        })
+
+        id('days-btn').addEventListener('click', toggleExpirationView);
+        id('sort-filter-btn').addEventListener('click', function() {
+            qs('.modal').classList.remove('hidden')
+        });
+        id('modal-close').addEventListener('click', function() {
+            qs('.modal').classList.add('hidden')
+        })
     }
 
     /**
@@ -21,6 +32,77 @@
      */
     function populateContent() {
 
+    }
+
+    /**
+     * clears all check marks from the modal
+     */
+    function clearAllSortings() {
+        let sortings = qsa('#sort-by-list li');
+        sortings.forEach(el => {
+            if (el.firstElementChild) {
+                el.removeChild(el.firstElementChild)
+            }
+        })
+    }
+
+    /**
+     * sort the items in each category based on the selected sorting
+     */
+    function itemSort() {
+        if (this.firstElementChild) { // already checked
+            return;
+        }
+        clearAllSortings();
+        let comparator;
+        if (this.textContent == "Alphabetical") {
+            comparator = (el1, el2) => {
+                return el1.firstElementChild.textContent.localeCompare(el2.firstElementChild.textContent)
+            }
+        } else if (this.textContent === "Expiration date (soonest first)") {
+            comparator = (el1, el2) => {
+                return el1.lastElementChild.dataset.days - el2.lastElementChild.dataset.days
+            }
+        } else { // this.textContent === "Expiration date(latest first)"
+            comparator = (el1, el2) => {
+                return el2.lastElementChild.dataset.days - el1.lastElementChild.dataset.days
+            }
+        }
+
+        let sortedPantry = [];
+        let sortedFridge = [];
+        let items = qsa('.item-list li')
+        items.forEach(item => {
+            if (item.dataset.location === "Pantry") {
+                sortedPantry.push(item)
+            } else { // item.dataset.location == "Refrigerator"
+                sortedFridge.push(item)
+            }
+        })
+
+        sortedPantry.sort(comparator)
+        id('pantry-list').innerHTML = "";
+        sortedPantry.forEach(item => {
+            id('pantry-list').appendChild(item)
+        })
+
+        sortedFridge.sort(comparator)
+        sortedFridge.forEach(item => {
+            id('fridge-list').appendChild(item)
+        })
+
+        this.prepend(createCheckMark());
+    }
+
+    /**
+     * creates and returns a check mark icon
+     * 
+     * @returns DOM Object - icon html element
+     */
+    function createCheckMark() {
+        let check = gen('i');
+        check.classList.add('fas', 'fa-check', 'align-icon-left')
+        return check;
     }
 
     /**

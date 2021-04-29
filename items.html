@@ -51,17 +51,16 @@
 									<button class="button primary fit icon solid fas fa-sort-amount-down" id="sort-filter-btn">Sort/Filter</button>
 
 									<!-- The Modal -->
-									<div id="sort-filter-modal" class="modal">
+									<div id="sort-filter-modal" class="modal hidden">
 
 										<!-- Modal content -->
 										<div class="modal-content">
-										<span class="close">&times;</span>
+										<span id="modal-close" class="close">&times;</span>
 
 										<!-- Sort -->
 										<h4>Sort by</h4>
 										<ul class="alt" id="sort-by-list">
 											<li>Alphabetical</li>
-											<li>Category</li>
 											<li>Expiration date (soonest first)</li>
 											<li>Expiration date (latest first)</li>
 										</ul>
@@ -69,7 +68,7 @@
 										<!-- Filter -->
 										<h4>Filter by</h4>
 										<ul class="alt" id="filter-by-list">
-											<li><i class="fas fa-check align-icon-left"></i> Personal items</li>
+											<li><i class="fas fa-check align-icon-left"></i>Personal items</li>
 											<li>Shared items</li>
 											<li>Expired items</li>
 											<li>Expiring soon items</li>
@@ -90,7 +89,7 @@
 
 										<div class="col-6 col-12-medium">
 											<h4>Refrigerator</h4>
-											<ul class="alt item-list">
+											<ul id="fridge-list" class="alt item-list">
 												<li class="item" data-purchaser="Libby" data-expiration="April 28, 2021" data-location="Refrigerator" data-category="Dairy" data-sharing="shared">
 													<span>Cheese</span>
 													<p class="align-text-right expiration-indicator" data-days="-2">
@@ -103,7 +102,7 @@
 														<i class="expired-warning fas fa-exclamation-circle"></i>
 													</p>
 												</li>
-												<li class="item" data-purchaser="Libby" data-expiration="May 10, 2021" data-location="Refrigerator" data-category="Fruit" data-sharing="personal"></li>
+												<li class="item" data-purchaser="Libby" data-expiration="May 10, 2021" data-location="Refrigerator" data-category="Fruit" data-sharing="shared">
 													<span>Cherry Tomatoes</span>
 													<p class="align-text-right expiration-indicator" data-days="10">
 														<i class="not-expired fas fa-check-circle"></i>
@@ -115,7 +114,7 @@
 
 										<div class="col-6 col-12-medium">
 											<h4>Pantry</h4>
-											<ul class="alt item-list">
+											<ul id="pantry-list" class="alt item-list">
 												<li class="item" data-purchaser="Libby" data-expiration="May 10, 2021" data-location="Pantry" data-category="Fruit" data-sharing="shared">
 													<span>Apple</span>
 													<p class="align-text-right expiration-indicator" data-days="10">
