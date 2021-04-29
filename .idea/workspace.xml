@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aedf2745-414c-4b14-a251-83004e57aa53" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/pocketgrocer/Query.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/pocketgrocer/Query.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/pocketgrocer/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/pocketgrocer/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +77,7 @@
       <workItem from="1619730797622" duration="255000" />
       <workItem from="1619731088649" duration="672000" />
       <workItem from="1619732044746" duration="59000" />
-      <workItem from="1619732146720" duration="3533000" />
+      <workItem from="1619732146720" duration="3909000" />
     </task>
     <servers />
   </component>
