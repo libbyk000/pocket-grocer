@@ -15,15 +15,26 @@ public class Query {
 
     private static final Logger log;
 
+    //canned queries 
+    private static final String INSERT_USER = "INSERT INTO USERS VALUES (?,?,?,?)";
+    private PreparedStatement insertUser;
+
     static {
         System.setProperty("java.util.logging.SimpleFormatter.format", "[%4$-7s] %5$s %n");
         log = Logger.getLogger(Query.class.getName());
     }
 
+    /*
+   * prepare all the SQL statements in this method.
+   */
+  public void prepareStatements() throws SQLException {
+
+  }
+
     public static void main(String[] args) throws Exception {
         log.info("Loading application properties");
         Properties properties = new Properties();
-        properties.load(Query.class.getClassLoader().getResourceAsStream("application.properties"));
+        properties.load(new FileInputStream("backend/src/main/java/pocketgrocer/application.properties"));
 
         log.info("Connecting to the database");
         Connection connection = DriverManager.getConnection(properties.getProperty("url"), properties);
