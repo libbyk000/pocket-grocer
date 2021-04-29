@@ -18,6 +18,11 @@
             el.addEventListener('click', itemSort)
         })
 
+        let filters = qsa('#filter-by-list li');
+        filters.forEach(el => {
+            el.addEventListener('click', itemFilter)
+        })
+
         id('days-btn').addEventListener('click', toggleExpirationView);
         id('sort-filter-btn').addEventListener('click', function() {
             qs('.modal').classList.remove('hidden')
@@ -34,11 +39,60 @@
 
     }
 
+    function itemFilter() {
+        if (this.textContent === "Show all") {
+            let items = qsa('.item')
+            items.forEach(item => {
+                item.classList.remove('hidden');
+            })
+            clearAllChecks('#filter-by-list li')
+            id('show-all').prepend(createCheckMark());
+            return;
+        }
+
+        let items = qsa('.item')
+        items.forEach(item => {
+            item.classList.add('hidden');
+        })
+
+        if (id('show-all').firstElementChild) {
+            id('show-all').firstElementChild.remove();
+        }
+
+        let unchecking = false;
+
+        if (this.firstElementChild) {
+            this.firstElementChild.remove();
+            unchecking = true;
+        }
+
+        if (!unchecking) {
+            this.prepend(createCheckMark());
+        }
+
+        items.forEach(item => {
+            if (id("personal-filter").firstElementChild && item.dataset.sharing === "personal") {
+                item.classList.remove('hidden')
+            }
+            if (id("shared-filter").firstElementChild && item.dataset.sharing === "shared") {
+                item.classList.remove('hidden')
+            }
+            let daysRemaining = parseInt(item.lastElementChild.dataset.days)
+            if (id("expired-filter").firstElementChild && daysRemaining <= 0) {
+                item.classList.remove('hidden')
+            }
+            if (id("expiring-filter").firstElementChild && daysRemaining <= 3 && daysRemaining > 0) {
+                item.classList.remove('hidden')
+            }
+        })
+
+    }
+
     /**
      * clears all check marks from the modal
      */
-    function clearAllSortings() {
-        let sortings = qsa('#sort-by-list li');
+    function clearAllChecks(selector) {
+        let sortings = qsa(selector);
         sortings.forEach(el => {
             if (el.firstElementChild) {
                 el.removeChild(el.firstElementChild)
@@ -53,7 +107,7 @@
         if (this.firstElementChild) { // already checked
             return;
         }
-        clearAllSortings();
+        clearAllChecks('#sort-by-list li');
         let comparator;
         if (this.textContent == "Alphabetical") {
             comparator = (el1, el2) => {
