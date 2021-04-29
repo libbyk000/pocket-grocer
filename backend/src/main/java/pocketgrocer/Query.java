@@ -79,9 +79,14 @@ public class Query {
      * @return whether or not the user already exists
      */
     public boolean userExists(String username){
-        checkUser.setString(1, username);
-        int userExists = insertUser.execute();
-        return userExists == 1;
+        try {
+            checkUser.setString(1, username);
+            int userExists = insertUser.execute();
+            return userExists == 1;
+
+        } catch(SQLException error){
+            return false;
+        }
     }
 
     /**
@@ -140,10 +145,10 @@ public class Query {
             //We don't need to check if the usre exists in the table since the request is coming straight from
             deleteUser.setString(1, username);
             deleteUser.execute();
-            return true
+            return true;
 
         } catch(SQLException error){
-
+            return false;
         }
     }
 
