@@ -1,4 +1,4 @@
-"use strict" // for error reporting
+"use strict"; // for error reporting
 
 (function() { // for encapsulation and scoping
 
