@@ -3,6 +3,12 @@ package pocketgrocer;
 import com.google.gson.Gson;
 import static spark.Spark.*;
 
+/*
+409 - conflict
+400 - error
+200 - success
+*/
+
 public class Server {
     public static void main(String[] args) {
         // Java serialization/deserialization library to convert Java Objects into JSON and back
@@ -11,6 +17,7 @@ public class Server {
         Query query = new Query();
 
         // Spark HTTP Endpoints¸
+        // create user
         post("/users/add", (request, response) -> {
             String username = request.queryParams("Username");
             String firstName = request.queryParams("FirstName");
@@ -18,21 +25,65 @@ public class Server {
             String password = request.queryParams("Password");
 
             try {
-
-                // do sth here
-                if (true) { // if user already exisst in db
-                    // private static final String CHECK_FLIGHT_CAPACITY = "SELECT capacity FROM Flights WHERE fid = ?";
+                if (query.userExists(username)) {
+                    response.status(409);
+                    return ("Username already taken");
+                } else if (query.addUser(username, firstName, lastName, password)) {
+                    response.status(200);
+                    return ("Success, welcome " + username);
+                } else {
                     response.status(400);
-                    return ("User already exists");
-                } else { // if user is successfully registered
-                    // call sth to put data into db
-                    response.status(200); // success
-                    return ("Success"); // return sth?
+                    return ("Error creating user");
                 }
             } catch (Exception e) {
-                response.status(400); // error
+                response.status(400);
                 return (e);
             }
         });
+
+        // login user
+        get("/users/login", (request, response) -> {
+            String username = request.queryParams("Username");
+            String password = request.queryParams("Password");
+
+            try {
+                if (!query.userExists(username)) {
+                    response.status(400);
+                    return ("Username doesn't exist");
+                } else if (query.checkLogin(username, password)) {
+                    response.status(200);
+                    return ("Success");
+                } else {
+                    response.status(400);
+                    return ("Username and password don't match");
+                }
+            } catch (Exception e) {
+                response.status(400);
+                return (e);
+            }
+        });
+
+        // post("/groups/create", (request, response) -> {
+        //     String username = request.queryParams("Username");
+
+        //     try {
+        //         if (!query.userExists(username)) {
+        //             response.status(400);
+        //             return ("Username doesn't exist");
+        //         } else if (query.inGroup(username)) {
+        //             response.status(400);
+        //             return ("You're already in a group");
+        //         } else if (query.create(username, password)) {
+        //             response.status(200);
+        //             return ("Success");
+        //         } else {
+        //             response.status(400);
+        //             return ("Username and password don't match");
+        //         }
+        //     } catch (Exception e) {
+        //         response.status(400);
+        //         return (e);
+        //     }
+        // });
     }
 }

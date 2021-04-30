@@ -15,9 +15,46 @@ public class Query {
 
     private static final Logger log;
 
+    // Password hashing parameter constants
+    private static final int HASH_STRENGTH = 65536;
+    private static final int KEY_LENGTH = 128;
+
+    //Users table columns: username, firstName, lastName, password, groupID
+
+    //canned queries
+    private static final String INSERT_USER = "INSERT INTO USERS VALUES (?,?,?,?)";
+    private PreparedStatement insertUser;
+
+
+    private static final String DELETE_USER = "DELETE FROM USERS WHERE username = (?)";
+    private PreparedStatement deleteUser;
+
+
+    private static final String CHECK_USER = "SELECT COUNT(*) FROM USERS WHERE username = (?)";
+    private PreparedStatement checkUser;
+
+    private static final String CHECK_LOGIN = "SELECT * FROM USERS WHERE username = (?)";
+    private PreparedStatement checkLogin;
+
+    //adds a member to a group
+    private static final String ADD_MEMBER = "UPDATE USERS set groupID = (?) WHERE username = (?)";
+    private PreparedStatement addMember;
+
     static {
         System.setProperty("java.util.logging.SimpleFormatter.format", "[%4$-7s] %5$s %n");
         log = Logger.getLogger(Query.class.getName());
+    }
+
+    /*
+     * prepare all the SQL statements in this method.
+     */
+    public void prepareStatements() throws SQLException {
+        insertUser =  conn.prepareStatement(INSERT_USER);
+        deleteUser =  conn.prepareStatement(DELETE_USER);
+        checkUser =  conn.prepareStatement(CHECK_USER);
+        checkLogin =  conn.prepareStatement(CHECK_LOGIN;
+        addMember =  conn.prepareStatement(ADD_MEMBER);
+
     }
 
     public static void main(String[] args) throws Exception {
@@ -46,5 +83,129 @@ public class Query {
     }
 
 
+    /**
+     * checks if a user with the given username already exists in the database
+     * @param username
+     * @return whether or not the user already exists
+     */
+    public boolean userExists(String username){
+        try {
+            checkUser.setString(1, username);
+            int userExists = insertUser.execute();
+            return userExists == 1;
+
+        } catch (SQLException error){
+            return false;
+        }
+    }
+
+    /**
+     * Adds a user into the USERS table
+     * @param username
+     * @param firstName
+     * @param lastName
+     * @param password
+     * @return whether or not the user was successfully added
+     */
+    public boolean addUser(String username, String firstName, String lastName, String password){
+        try {
+            username = username.toLowerCase();
+            firstName = firstName.toLowerCase();
+            lastName = lastName.toLowerCase();
+            password = password.toLowerCase();
+
+            insertUser.setString(1, username);
+            insertUser.setString(1, firstName);
+            insertUser.setString(1, lastName);
+            insertUser.setString(1, password);
+            insertUser.execute();
+
+            // // Generate a random cryptographic salt
+            // SecureRandom random = new SecureRandom();
+            // byte[] salt = new byte[16];
+            // random.nextBytes(salt);
+            // KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, HASH_STRENGTH, KEY_LENGTH);
+
+            // // Generate the hash
+            // SecretKeyFactory factory = null;
+            // byte[] hash = null;
+            // try {
+            //     factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1");
+            //     hash = factory.generateSecret(spec).getEncoded();
+            // } catch (NoSuchAlgorithmException | InvalidKeySpecException ex) {
+            //     throw new IllegalStateException();
+            // }
+
+            return true;
+
+
+        } catch (SQLException error)){
+            return false;
+        }
+
+    }
+
+    /**
+     * Deletes a User
+     * @param username
+     * @return whether or not the user was successfully deleted
+     */
+    public boolean deleteUser(String username){
+        try {
+            //We don't need to check if the user exists in the table since the request is coming straight from
+            deleteUser.setString(1, username);
+            deleteUser.execute();
+            return true;
+
+        } catch(SQLException error){
+            return false;
+        }
+    }
+
+    /**
+     * Logs in a User
+     * @param username
+     * @return whether or not the user was successfully logged in
+     */
+    public boolean checkLogin(String username, String password){
+        try {
+            username = username.toLowerCase();
+            password =  password.toLowerCase();
+            ResultSet userSet = checkLogin.executeQuery();
+
+            while(userSet.next()){
+                String getUser = userSet.getString("username");
+                String getPass = userSet.getString("password");
+                if(getUser.equals(username) && getPass.equals("password")){
+                    return true
+                }
+            }
+        //TODO: if we return false then we want the person making the request to know if the username/password didn't match 
+        //or if there was a general error that occured
+        } catch(SQLException error){
+            return false;
+        }
+    }
+
+//       /**
+//    * Example utility function that uses prepared statements
+//    */
+//   private int checkFlightCapacity(int fid) throws SQLException {
+//     checkFlightCapacityStatement.clearParameters();
+//     checkFlightCapacityStatement.setInt(1, fid);
+//     ResultSet results = checkFlightCapacityStatement.executeQuery();
+//     results.next();
+//     int capacity = results.getInt("capacity");
+//     results.close();
+
+//     return capacity;
+//   }
 
 }
+
+/*
+query.userExists(username);
+query.addUser(username, firstName, lastName, password);
+query.checkLogin(username, password);
+query.inGroup(username); // checks if user is already in a group or not
+*/
