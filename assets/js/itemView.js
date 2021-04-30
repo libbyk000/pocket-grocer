@@ -28,11 +28,11 @@
         let icon = generateIcon(daysRemaining)
         id('expiration-container').appendChild(icon);
 
-        if (urlParams.get('sharing') == "personal") {
-            id('sharing').clicked = false;
-        } else { // urlParams.get('sharing') == "shared"
-            id('sharing').clicked = true;
+        if (urlParams.get('sharing') === "shared") {
+            qs('.slider').click();
         }
+
+        id('sharing').disabled = true;
     }
 
 })()
