@@ -19,6 +19,8 @@ public class Query {
     private static final int HASH_STRENGTH = 65536;
     private static final int KEY_LENGTH = 128;
 
+    //Users table columns: username, firstName, lastName, password, groupID
+
     //canned queries
     private static final String INSERT_USER = "INSERT INTO USERS VALUES (?,?,?,?)";
     private PreparedStatement insertUser;
@@ -31,6 +33,12 @@ public class Query {
     private static final String CHECK_USER = "SELECT COUNT(*) FROM USERS WHERE username = (?)";
     private PreparedStatement checkUser;
 
+    private static final String CHECK_LOGIN = "SELECT * FROM USERS WHERE username = (?)";
+    private PreparedStatement checkLogin;
+
+    //adds a member to a group
+    private static final String ADD_MEMBER = "UPDATE USERS set groupID = (?) WHERE username = (?)";
+    private PreparedStatement addMember;
 
     static {
         System.setProperty("java.util.logging.SimpleFormatter.format", "[%4$-7s] %5$s %n");
@@ -44,6 +52,8 @@ public class Query {
         insertUser =  conn.prepareStatement(INSERT_USER);
         deleteUser =  conn.prepareStatement(DELETE_USER);
         checkUser =  conn.prepareStatement(CHECK_USER);
+        checkLogin =  conn.prepareStatement(CHECK_LOGIN;
+        addMember =  conn.prepareStatement(ADD_MEMBER);
 
     }
 
@@ -84,7 +94,7 @@ public class Query {
             int userExists = insertUser.execute();
             return userExists == 1;
 
-        } catch(SQLException error){
+        } catch (SQLException error){
             return false;
         }
     }
@@ -95,7 +105,7 @@ public class Query {
      * @param firstName
      * @param lastName
      * @param password
-     * @return whether or not the user already exists
+     * @return whether or not the user was successfully added
      */
     public boolean addUser(String username, String firstName, String lastName, String password){
         try {
@@ -129,24 +139,49 @@ public class Query {
             return true;
 
 
-        } catch(SQLException error)){
+        } catch (SQLException error)){
             return false;
         }
 
     }
 
     /**
-     * checks if a user with the given username already exists in the database
+     * Deletes a User
      * @param username
-     * @return whether or not the user was deleted
+     * @return whether or not the user was successfully deleted
      */
     public boolean deleteUser(String username){
         try {
-            //We don't need to check if the usre exists in the table since the request is coming straight from
+            //We don't need to check if the user exists in the table since the request is coming straight from
             deleteUser.setString(1, username);
             deleteUser.execute();
             return true;
 
+        } catch(SQLException error){
+            return false;
+        }
+    }
+
+    /**
+     * Logs in a User
+     * @param username
+     * @return whether or not the user was successfully logged in
+     */
+    public boolean checkLogin(String username, String password){
+        try {
+            username = username.toLowerCase();
+            password =  password.toLowerCase();
+            ResultSet userSet = checkLogin.executeQuery();
+
+            while(userSet.next()){
+                String getUser = userSet.getString("username");
+                String getPass = userSet.getString("password");
+                if(getUser.equals(username) && getPass.equals("password")){
+                    return true
+                }
+            }
+        //TODO: if we return false then we want the person making the request to know if the username/password didn't match 
+        //or if there was a general error that occured
         } catch(SQLException error){
             return false;
         }
