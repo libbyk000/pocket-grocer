@@ -7,11 +7,8 @@
     function init() {
 
         populateAccountInfo();
-        let removeHousmateButtons = qsa('.remove-housemate')
-        removeHousmateButtons.forEach(button => {
-            button.addEventListener('click', removeHousmate)
-        })
-        qs('form').addEventListener('submit', addHousemate);
+        id('create-form').addEventListener('submit', createGroup);
+        id('join-form').addEventListener('submit', joinGroup);
 
     }
 
@@ -22,28 +19,36 @@
 
     }
 
-    function removeHousmate() {
-        let housemateUsername = this.previousElementSibling.textContent;
-
-        // TODO: make post request to backend
-
-        this.parentElement.remove();
-    }
-
     /**
-     * submit new housemate to backend and then refresh the page
+     * create a new group, automatically adding the current user to that group
      * 
      * @param {object} e - object representing the submit event 
      */
-    function addHousemate(e) {
+    function createGroup(e) {
         e.preventDefault();
 
-        let data = new FormData(qs('form'));
+        let data = new FormData(id('create-form'));
 
         // TODO: make post request to backend
 
         location.reload();
     }
+
+    /**
+     * join an existing group
+     * 
+     * @param {object} e - object representing the submit event 
+     */
+     function joinGroup(e) {
+        e.preventDefault();
+
+        let data = new FormData(id('join-form'));
+
+        // TODO: make post request to backend
+
+        location.reload();
+    }
+
 
 
 })()

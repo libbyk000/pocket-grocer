@@ -76,21 +76,46 @@
 												</li>
 											</ul>
 										</div>
+										<div class="col-12">
+											<h4>Current Group</h4>
+											<ul class="alt">
+												<li>
+													403-gang
+													<span class="remove-housemate close">&times;</span>
+												</li>
+											</ul>
+										</div>
 										
 									</div>
 
-									<h3 class=major>add a housemate</h3>
+									<h3 class=major>create group</h3>
 									<div class="row">
-										<form method="post" action="#" class="full-width">
+										<form id="create-form" method="post" action="#" class="full-width">
 											<div class="col-6 col-12-xsmall">
-												<label for="last-name">Username</label>
-												<input type="text" name="housemate-username" id="housemate-username" value="" required>
+												<label for="group-name">Group Name</label>
+												<input type="text" name="housemate-username" id="new-group-name" value="" required>
 											</div>
 											<div class="col-6 col-12-medium">
 												<!-- TODO: Enable on click -->
-												<button class="button primary fit icon solid fas fa-user-plus" id="add-housemate-btn">add</button>
+												<button class="button primary fit icon solid fas fa-user-plus" id="create-group-btn">create</button>
 											</div>
 										</form>
+									</div>
+
+									<div id="join-form-container">
+										<h3 class=major>join group</h3>
+										<div class="row">
+											<form id="join-form" method="post" action="#" class="full-width">
+												<div class="col-6 col-12-xsmall">
+													<label for="group-name">Group Name</label>
+													<input type="text" name="housemate-username" id="existing-group-name" value="" required>
+												</div>
+												<div class="col-6 col-12-medium">
+													<!-- TODO: Enable on click -->
+													<button class="button primary fit icon solid fas fa-user-plus" id="join-group-btn">join</button>
+												</div>
+											</form>
+										</div>
 									</div>
 									
 								</section>								  
