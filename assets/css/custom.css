@@ -282,6 +282,10 @@ input:checked + .slider:before {
      font-size: 1.3em;
 }
 
+input[type=text].error {
+     border-color: red;
+}
+
 /*
 Leave this at the bottom of the page
 */

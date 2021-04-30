@@ -92,8 +92,9 @@
 									<div class="row">
 										<form id="create-form" method="post" action="#" class="full-width">
 											<div class="col-6 col-12-xsmall">
-												<label for="group-name">Group Name</label>
+												<label for="new-group-name">Group Name</label>
 												<input type="text" name="housemate-username" id="new-group-name" value="" required>
+												<span class="error" id="new-group-error"></span>
 											</div>
 											<div class="col-6 col-12-medium">
 												<!-- TODO: Enable on click -->
@@ -107,8 +108,9 @@
 										<div class="row">
 											<form id="join-form" method="post" action="#" class="full-width">
 												<div class="col-6 col-12-xsmall">
-													<label for="group-name">Group Name</label>
+													<label for="existing-group-name">Group Name</label>
 													<input type="text" name="housemate-username" id="existing-group-name" value="" required>
+													<span id="existing-group-error"></span>
 												</div>
 												<div class="col-6 col-12-medium">
 													<!-- TODO: Enable on click -->
