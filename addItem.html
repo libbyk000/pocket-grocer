@@ -13,6 +13,7 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<link rel="stylesheet" href="assets/css/custom.css" />
 		<script src="assets/js/helper.js"></script>
+		<script src="assets/js/ingredients.js"></script>
 		<script src="assets/js/addItem.js"></script>
 	</head>
 	<body class="is-preload">
@@ -50,16 +51,25 @@
 									<section>
 										<form method="post" action="#">
 											<div class="row gtr-uniform">
+												<!--  Recent Purchase -->
+												<div class="col-12">
+													<label>have you bought this recently?</label>
+												</div>
+												<div class="col-6 col-12-xsmall">
+													<input id="yes" type="radio" name="recent-purchase">
+													<label for="yes">Yes</label>
+												</div>
+												<div class="col-6 col-12-xsmall">
+													<input id="no" type="radio" name="recent-purchase">
+													<label for="no">No</label>
+												</div>
+
 												<div class="col-12">
 												<!-- Item Name -->
-													<label for="item-name">Item Name</label>
-													<input id="item-name-input" type="text" name="item-name" required/>
+													<label for="item-name-input">Item Name</label>
+													<input id="item-name-input" type="text" name="item-name" list="item-name" autcomplete="off" required/>
 													<datalist id="item-name">
-														<!-- TODO: Populate with recently bought items -->
-														<option>Three Layer Hummus</option>
-														<option>Chicken</option>
-														<option>Apples</option>
-														<option>Avocado</option>
+														
 													</datalist>
 
 												</div>
