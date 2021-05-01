@@ -51,6 +51,7 @@
 									<section>
 										<form method="post" action="#">
 											<div class="row gtr-uniform">
+
 												<!--  Recent Purchase -->
 												<div class="col-12">
 													<label>have you bought this recently?</label>
@@ -64,8 +65,8 @@
 													<label for="no">No</label>
 												</div>
 
+												<!-- Item Name -->												
 												<div class="col-12">
-												<!-- Item Name -->
 													<label for="item-name-input">Item Name</label>
 													<input id="item-name-input" type="text" name="item-name" list="item-name" autcomplete="off" required/>
 													<datalist id="item-name">
@@ -73,11 +74,17 @@
 													</datalist>
 
 												</div>
+												
+												<!-- Quantity -->
+												<div class="col-12">
+													<label for="quantity">Quantity</label>
+													<input type="number" id="quantity" name="quantity" min="1" max="1000" required>													
+												</div>
 
 												<!-- Expiration Date -->
 												<div class="col-12">
 													<label for="expiration-date">Expiration Date</label>
-													<input type="date" id="expiration-date" name="expiration-date" min="2020-01-01" max="2022-12-31" required>
+													<input type="date" id="expiration-date" name="expiration-date" min="2020-01-01" max="2023-12-31" required>
 												</div>
 
 												<!-- Storage Location -->

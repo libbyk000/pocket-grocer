@@ -2151,6 +2151,7 @@ input, select, textarea {
 	input[type="email"],
 	input[type="tel"],
 	input[type="date"],
+	input[type="number"],
 	select,
 	textarea {
 		-moz-appearance: none;
@@ -2174,6 +2175,7 @@ input, select, textarea {
 		input[type="email"]:invalid,
 		input[type="tel"]:invalid,
 		input[type="date"]:invalid,
+		input[type="number"]:invalid,
 		select:invalid,
 		textarea:invalid {
 			box-shadow: none;
@@ -2201,6 +2203,7 @@ input, select, textarea {
 	input[type="password"],
 	input[type="email"],
 	input[type="date"],
+	input[type="number"],
 	select {
 		height: 2.75em;
 	}

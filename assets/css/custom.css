@@ -67,7 +67,7 @@ header a {
      border-radius: 50%;
 }
 
-input[type="text"], input[type="password"], input[type="email"], input[type="date"], select {
+input[type="text"], input[type="password"], input[type="email"], input[type="date"], input[type="number"], select {
      background-color: var(--backsplashColor);
      margin-top: 15px;
 }
@@ -248,7 +248,7 @@ input:checked + .slider:before {
 .modal-content {
      background-color: #fefefe;
      margin: 15% auto; /* 15% from the top and centered */
-     padding: 20px;
+     padding: 30px;
      border: 1px solid #888;
      width: 80%; /* Could be more or less, depending on screen size */
 }
@@ -292,4 +292,13 @@ Leave this at the bottom of the page
 
 .hidden {
      display: none;
+}
+
+input[type="number"] {
+     width: 100%;
+     border: none;
+}
+
+.p-no-bottom-margin {
+     margin: 0 0 0 0;
 }
