@@ -75,9 +75,8 @@
 													<span class="remove-housemate close">&times;</span>
 												</li>
 
+												<!-- Remove self from group modal -->
 												<div id="remove-from-group-modal" class="modal">
-
-													<!-- Modal content -->
 													<div class="modal-content">
 													<span id="modal-close" class="close">×</span>
 			
@@ -90,41 +89,42 @@
 												</div>
 											</ul>
 										</div>
-										
-									</div>
 
-									<h3 class=major>create group</h3>
-									<div class="row">
-										<form id="create-form" method="post" action="#" class="full-width">
-											<div class="col-6 col-12-xsmall">
-												<label for="new-group-name">Group Name</label>
-												<input type="text" name="housemate-username" id="new-group-name" value="" required>
-												<span class="error" id="new-group-error"></span>
+										<div class="col-12">
+											<h3 class=major>create group</h3>
+											<div class="row">
+												<form id="create-form" method="post" action="#" class="full-width">
+													<div class="col-6 col-12-xsmall">
+														<label for="new-group-name">Group Name</label>
+														<input type="text" name="housemate-username" id="new-group-name" value="" required>
+														<span class="error" id="new-group-error"></span>
+													</div>
+													<div class="col-6 col-12-medium">
+														<!-- TODO: Enable on click -->
+														<button class="button primary fit icon solid fas fa-user-plus" id="create-group-btn">create</button>
+													</div>
+												</form>
 											</div>
-											<div class="col-6 col-12-medium">
-												<!-- TODO: Enable on click -->
-												<button class="button primary fit icon solid fas fa-user-plus" id="create-group-btn">create</button>
-											</div>
-										</form>
-									</div>
-
-									<div id="join-form-container">
-										<h3 class=major>join group</h3>
-										<div class="row">
-											<form id="join-form" method="post" action="#" class="full-width">
-												<div class="col-6 col-12-xsmall">
-													<label for="existing-group-name">Group Name</label>
-													<input type="text" name="housemate-username" id="existing-group-name" value="" required>
-													<span id="existing-group-error"></span>
-												</div>
-												<div class="col-6 col-12-medium">
-													<!-- TODO: Enable on click -->
-													<button class="button primary fit icon solid fas fa-user-plus" id="join-group-btn">join</button>
-												</div>
-											</form>
 										</div>
-									</div>
 									
+										<div class="col-12">
+											<div id="join-form-container">
+												<h3 class=major>join group</h3>
+												<div class="row">
+													<form id="join-form" method="post" action="#" class="full-width">
+														<div class="col-6 col-12-xsmall">
+															<label for="existing-group-name">Group Name</label>
+															<input type="text" name="housemate-username" id="existing-group-name" value="" required>
+															<span id="existing-group-error"></span>
+														</div>
+														<div class="col-6 col-12-medium">
+															<!-- TODO: Enable on click -->
+															<button class="button primary fit icon solid fas fa-user-plus" id="join-group-btn">join</button>
+														</div>
+													</form>
+												</div>
+											</div>
+										</div>
 								</section>								  
 							</div>
 						</div>
