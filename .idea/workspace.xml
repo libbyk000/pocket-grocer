@@ -1,9 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="aedf2745-414c-4b14-a251-83004e57aa53" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/pocketgrocer/Query.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/pocketgrocer/Query.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/pocketgrocer/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/pocketgrocer/Server.java" afterDir="false" />
+    <list default="true" id="aedf2745-414c-4b14-a251-83004e57aa53" name="Default Changelist" comment="update backend">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/pocketgrocer/Query.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/pocketgrocer/Query.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/pocketgrocer/Server.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/pocketgrocer/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/pocketgrocer/resources/schema.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/pocketgrocer/utils/CORSFilter.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,21 +37,37 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="1rd16kgJWA2EYJ8cVay2UlLyMMI" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/backend/src/main/java/pocketgrocer" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -79,7 +119,31 @@
       <workItem from="1619731088649" duration="672000" />
       <workItem from="1619732044746" duration="59000" />
       <workItem from="1619732146720" duration="3533000" />
+      <workItem from="1619737418034" duration="2610000" />
+      <workItem from="1620003795456" duration="629000" />
     </task>
+    <task id="LOCAL-00001" summary="update backend">
+      <created>1619736894995</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1619736894995</updated>
+    </task>
+    <task id="LOCAL-00002" summary="update backend">
+      <created>1619736925920</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1619736925920</updated>
+    </task>
+    <task id="LOCAL-00003" summary="update backend">
+      <created>1619736969729</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1619736969729</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -96,5 +160,27 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update backend" />
+    <option name="LAST_COMMIT_MESSAGE" value="update backend" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1589" y="-42" width="1071" height="802" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1619738013148">
+      <screen x="1440" y="-180" width="1920" height="1080" />
+    </state>
+    <state x="1589" y="-42" width="1071" height="802" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900/1440.-180.1920.1080@1440.-180.1920.1080" timestamp="1619738013148" />
+    <state x="1647" y="49" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1619737962530">
+      <screen x="1440" y="-180" width="1920" height="1080" />
+    </state>
+    <state x="1647" y="49" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1440.900/1440.-180.1920.1080@1440.-180.1920.1080" timestamp="1619737962530" />
+    <state x="2000" y="97" key="Vcs.Push.Dialog.v2" timestamp="1619736972842">
+      <screen x="1440" y="-180" width="1920" height="1080" />
+    </state>
+    <state x="2000" y="97" key="Vcs.Push.Dialog.v2/0.0.1440.900/1440.-180.1920.1080@1440.-180.1920.1080" timestamp="1619736972842" />
+    <state x="2206" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1619737290368">
+      <screen x="1440" y="-180" width="1920" height="1080" />
+    </state>
+    <state x="2206" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900/1440.-180.1920.1080@1440.-180.1920.1080" timestamp="1619737290368" />
   </component>
 </project>

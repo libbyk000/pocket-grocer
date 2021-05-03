@@ -1,2 +1,0 @@
-DROP TABLE IF EXISTS sth;
-CREATE TABLE sth (id INT PRIMARY KEY, description VARCHAR(255), details VARCHAR(4096), done BIT);
