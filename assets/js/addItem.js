@@ -7,7 +7,26 @@
     function init() {
 
         qs('form').addEventListener('submit', submitForm);
+        let recentPurchaseRadios = qsa('input[name=recent-purchase]')
+        recentPurchaseRadios.forEach(radio => {
+            radio.addEventListener('change', updateItemDropdown)
+        })
+        id('no').click();
+    }
 
+    function updateItemDropdown() {
+        id('item-name').innerHTML = "";
+        if (this.id === "no") {
+            INGREDIENTS.forEach(ingredient => {
+                let entry = document.createElement('option')
+                entry.textContent = ingredient.name
+                id('item-name').appendChild(entry);
+            })
+        } else { // this.id === "yes"
+            
+            // TODO: pull recently purchased items from backend
+
+        }
     }
 
     /**
