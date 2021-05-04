@@ -31,6 +31,21 @@ jobs:
           api_location: "api" # Api source code path - optional
           output_location: "" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
+      - name: Cypress E2E Tests
+        uses: cypress-io/github-action@v1
+          env:
+              CYPRESS_RECORD_KEY: 96a853fb-90c8-4b86-acf8-e84d7dbd2aef
+            with:
+              record: true
+        CYPRESS_BASE_URL: https://blue-island-02e91fa10-${{ github.event.pull_request.number }}.westeurope.azurestaticapps.net
+        
+        name: Initialize test variables
+        shell: bash
+        run: |
+          CYPRESS_BASE_URL="https://blue-island-02e91fa10.azurestaticapps.net"
+          if [ -n "${{ github.event.pull_request.number }}" ]; then CYPRESS_BASE_URL="https://blue-island-02e91fa10-${{ github.event.pull_request.number }}.westeurope.azurestaticapps.net" ; fi
+          echo "::set-env name=CYPRESS_BASE_URL::${CYPRESS_BASE_URL}"
+
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
