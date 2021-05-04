@@ -39,7 +39,7 @@ jobs:
           record: true
         CYPRESS_BASE_URL: https://blue-island-02e91fa10-${{ github.event.pull_request.number }}.westeurope.azurestaticapps.net
         
-        name: Initialize test variables
+      - name: Initialize test variables
         shell: bash
         run: |
           CYPRESS_BASE_URL="https://blue-island-02e91fa10.azurestaticapps.net"
