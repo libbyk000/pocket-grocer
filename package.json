@@ -4,7 +4,7 @@
   "description": "Pocket Grocer is a web application that empowers individuals, as well as those living in communal living spaces, to keep track of grocery items and respective expiration dates in order to minimize their food waste. The 4 main tasks with which this application aims to help users are:\r 1. Keeping track of their inventory in both the fridge and pantry\r 2. Creating household groups in which people can add other users, and see and share the items in that household\r 3. Filtering and Sorting the items in their inventory\r 4. Viewing commonly purchased grocery items for themselves and for the household",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 0"
   },
   "repository": {
     "type": "git",
