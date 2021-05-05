@@ -18,10 +18,6 @@ jobs:
       - uses: actions/checkout@v2
         with:
           submodules: true
-      - name: Cypress E2E Tests
-        uses: cypress-io/github-action@v1
-        env:
-          CYPRESS_BASE_URL: https://blue-island-02e91fa10.westeurope.azurestaticapps.net
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v0.0.1-preview
@@ -35,6 +31,10 @@ jobs:
           api_location: "api" # Api source code path - optional
           output_location: "" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
+      - name: Cypress E2E Tests
+        uses: cypress-io/github-action@v1
+        env:
+          CYPRESS_BASE_URL: https://blue-island-02e91fa10.westeurope.azurestaticapps.net
       # - name: Initialize test variables
       #   shell: bash
       #   run: |
