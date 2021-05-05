@@ -12,6 +12,9 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<link rel="stylesheet" href="assets/css/custom.css" />
+
+		<script src="assets/js/helper.js"></script>
+		<script src="assets/js/login.js"></script>
 	</head>
 	<body class="is-preload">
 
@@ -54,10 +57,10 @@
 					<!-- Email/Password Form -->
 					<div class="inner">
 						<form method="post" action="#">
-							<input type="text" placeholder="Email" id="email" required/>	
+							<input name="userName" type="text" placeholder="Email" id="username" required/>	
 							<span class="error" id="email-error"></span>
 
-							<input type="password" placeholder="Password" id="password" required/>
+							<input name="password" type="password" placeholder="Password" id="password" required/>
 							<span class="error" id="password-error"></span>
 							<button class="button primary fit" id="login-btn">login</button>
 

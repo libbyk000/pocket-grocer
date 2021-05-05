@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/libbyk000/pocket-grocer#readme",
   "dependencies": {
-    "cypress": "^7.2.0"
+    "cypress": "^7.2.0",
+    "mocha": "^8.3.2"
   }
 }
