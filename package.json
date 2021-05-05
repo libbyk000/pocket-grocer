@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/libbyk000/pocket-grocer/issues"
   },
-  "homepage": "https://github.com/libbyk000/pocket-grocer#readme"
+  "homepage": "https://github.com/libbyk000/pocket-grocer#readme",
+  "dependencies": {
+    "cypress": "^7.2.0"
+  }
 }
