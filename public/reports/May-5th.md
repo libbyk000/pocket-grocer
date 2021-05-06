@@ -21,6 +21,11 @@ https://homes.cs.washington.edu/~rjust/courses/2021Spring/CSE403/project.html
 ### **Progress and Issues**
 
   #### **Backend**
+  - completed Server.java endpoints
+  - added SQL prepared statements to Query.Java
+  - started testing via postman
+  - began CI implementation 
+  - worked with Frontend to get connection working with the API
 
 
   #### **Frontend**
@@ -69,16 +74,16 @@ Look at the Beta Assignment due next tuesday
 ### **Progress** 
 - Libby: Implemented confirmation modals for front end, quantity parameter for addItem page, looking into setting up automated testing with Mocha, created 404 page, worked on creating the CI/CD, implement static delete account capabilities on account page
 - Fadel: Implemented sorting and filtering, itemView click from items page, expiration dates shown on click from items page, added “have you bought this recently” toggle, error display, worked on creating the CI/CD
-- Sophia: Wrote the SQL prepared statements in Query.java as well as the methods/checks ti see if a user exists (userExists()), add a user profile (addUser), delete a user’s profile, check if a user’s login input is valid, checking if a groupname already exists, checking if a user is already a member in a group, updating a groupname for a user (this is to add a user to a group as well as remove a user from a group). Finalized the Inventory and Users table information and worked with frontend to clarify functionality. Met with Shaurya and Tushar to test Query.java and SQL database functionality via postman. Filled out the APi endpoint spreadsheet with Shaurya.
-- Myka: Worked on weekly report and met with the back end team to assist troubleshooting errors
-- Shaurya:
-- Tushar: 
+- Sophia: Wrote the SQL prepared statements in Query.java as well as the methods/checks to see if a user exists (userExists()), add a user profile (addUser), delete a user’s profile, check if a user’s login input is valid, checking if a groupname already exists, checking if a user is already a member in a group, updating a groupname for a user (this is to add a user to a group as well as remove a user from a group). Finalized the Inventory and Users table information and worked with frontend to clarify functionality. Met with Shaurya and Tushar to test Query.java and SQL database functionality via postman. Filled out the APi endpoint spreadsheet with Shaurya.
+- Myka: Worked on weekly report and met with the back end team to assist troubleshooting errors, added test tables and queries to help testing the DB
+- Shaurya: completed the Server.Java endpoints, worked on testing via postman, looked into using Heroku for CI build, helped Fadel successfully connect to the API, filled out the testing information on the testing assignment for the backend, wrote Inventory interface to create inventory objects 
+- Tushar: worked with Shaurya and Sophia to debug issues that arose when testing with postman for the first time. Implemented adding an Item to the inventory table, Added unit tests in TestQuery.Java
  
 ### **Next week’s plan**
 - Libby: Help with JS stuff when Fadel asks
 - Fadel: Enable toggling of sharing attribute on Item, change form parameters to match post request requirements, show and hide the confirmation modal for account page
 - Sophia: Add any more endpoints that we need in Query.java, help write Unit tests in TestQuery.java, help debug any issues that arise for the backend 
 - Myka: Meet with Tushar to go over testing info and make a plan
-- Shaurya:
-- Tushar: 
+- Shaurya: work on implementing CI implementation on Azure since Heroku might not work anymore, finish up any endpoints the api needs, more testing on postman 
+- Tushar: more tests in TestQuery.Java. Utilize the Counter table when adding an items to the inventory table, finish endpoint to return an array of Json objects for each inventory item. Work on CI implementation
  
