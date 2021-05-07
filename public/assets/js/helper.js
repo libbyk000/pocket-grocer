@@ -18,13 +18,6 @@ function qs(selector) {
     return document.querySelector(selector)
 }
 
-async function checkStatus(res) {
-    if (!res.ok) {
-        throw new Error(await res.text());
-    }
-    return res;
-}
-
 function getSession() {
     let cookies = document.cookie.split(";");
     let session = "";
@@ -59,4 +52,13 @@ function generateIcon(daysRemaining) {
         icon.classList.add('not-expired', 'fa-check-circle');
     }
     return icon;
+}
+
+function generateRequestBody(formData) {
+    let object = {};
+    formData.forEach(function(value, key) {
+        object[key] = value;
+    });
+    let json = JSON.stringify(object);
+    return json;
 }
