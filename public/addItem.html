@@ -78,7 +78,16 @@
 												<!-- Quantity -->
 												<div class="col-12">
 													<label for="quantity">Quantity</label>
-													<input type="number" id="quantity" name="quantity" min="1" max="1000" required>			  
+													<!-- <input type="number" id="quantity" name="quantity" min="1" max="1000" required> -->
+
+													<!-- TODO: implement JS to increment  
+													https://embed.plnkr.co/plunk/B5waxZ
+												    -->
+													<div class="quantity buttons_added">
+														<input type="button" value="-" class="minus">
+														<input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+														<input type="button" value="+" class="plus">
+												  </div>			  
 												</div>
 
 												<!-- Expiration Date -->

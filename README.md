@@ -17,7 +17,6 @@ Pocket Grocer is a web application that empowers individuals, as well as those l
 
 ### How to build and test system
 GitHub Actions automates this process upon every push to master, however, if one chooses to do so locally:
-
 To test via CLI navigate to the root directory of the pocket-grocer repo and run
 ```
 npm install cypress --save-dev
@@ -26,7 +25,6 @@ Then,
 ```
 node_module/.bin/cypress open
 ```
-
 
 ### Repository Layout
 * .github
