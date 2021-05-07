@@ -27,7 +27,7 @@
     }
 
     function clearErrors(res) {
-        id('email-error').innerHTML = "";
+        id('username-error').innerHTML = "";
         id('password-error').innerHTML = "";
         qs('input[name=userName]').classList.remove('error')
         qs('input[name=password]').classList.remove('error')
