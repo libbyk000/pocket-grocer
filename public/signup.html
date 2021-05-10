@@ -12,6 +12,9 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<link rel="stylesheet" href="assets/css/custom.css" />
+
+		<script src="assets/js/helper.js"></script>
+		<script src="assets/js/signup.js"></script>
 	</head>
 	<body class="is-preload">
 
@@ -67,6 +70,7 @@
 									<div class="col-12">
 										<label for="demo-email">Username</label>
 										<input type="text" name="username" id="username" value="" required>
+										<span class="error" id="username-error"></span>
 									</div>
 									<div class="col-6 col-12-xsmall">
 										<label for="password">Password</label>
@@ -75,6 +79,7 @@
 									<div class="col-6 col-12-small">
 										<label for="confirm-password">Confirm Password</label>
 										<input type="password" name="confirm-password" id="confirm-password" required>
+										<span class="error" id="confirm-password-error"></span>
 									</div>
 									<div class="col-12">
 										<ul class="actions">
