@@ -18,16 +18,16 @@ function qs(selector) {
     return document.querySelector(selector)
 }
 
-function getSession() {
+function getUserName() {
     let cookies = document.cookie.split(";");
-    let session = "";
+    let userName = "";
     for (let i = 0; i < cookies.length; i++) {
         let key = cookies[i].split("=");
-        if (key[0].trim() == "session") {
-            session = key[1];
+        if (key[0].trim() == "userName") {
+            userName = key[1];
         }
     }
-    return session;
+    return userName;
 }
 
 function signOut() {

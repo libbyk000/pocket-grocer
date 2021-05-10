@@ -2,6 +2,8 @@
 
 (function() { // for encapsulation and scoping
 
+    const BASE_URL = "http://localhost:4567"
+
     window.addEventListener('load', init)
 
     function init() {
@@ -35,8 +37,34 @@
     /**
      * fetch all current items in the pantry and refrigerator and display them on the page
      */
-    function populateContent() {
+    async function populateContent() {
+        let userName = getUserName();
+        if (userName == "") {
+            window.location.href = "login.html"
+        }
+        let params = new FormData()
+        params.append('userName', getUserName())
+        let res;
+        try {
+            res = await fetch(BASE_URL + '/items/get', { method: "POST", body: generateRequestBody(params), mode: 'cors' })
+            checkStatus(res)
+            res = await res.json();
+        } catch (err) {
+            alert(err)
+            window.location.href = "login.html"
+        }
+        
+        console.log(res);
 
+        // TODO: populate content with items from response
+    }
+
+    function checkStatus(res) {
+        if (res.status == 200) {
+            return res
+        } else if (res.status == 409) {
+            throw new Error('Your username was not found. Please login again.')
+        }
     }
 
     function itemFilter() {

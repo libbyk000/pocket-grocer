@@ -34,7 +34,7 @@
         } else {
             if (res.status === 409) {
                 qs('input[name=userName]').classList.add('error')
-                id('username-error').textContent = "*Username exists"
+                id('username-error').textContent = "*Username does not exist"
             } else if (res.status === 400) {
                 qs('input[name=password]').classList.add('error')
                 id('password-error').textContent = "*Incorrect password"
