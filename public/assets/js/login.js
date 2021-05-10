@@ -6,12 +6,6 @@
 
     function init() {
         qs('form').addEventListener('submit', login)
-
-        fetch('http://localhost:4567/hello', {mode: 'cors'})
-            .then(checkStatus)
-            .then(res => res.text())
-            .then(console.log)
-            .catch(console.error)
     }
 
     function login(e) {
@@ -51,8 +45,7 @@
 
     function handleResponse(res) {
 
-        // TODO: set local session cookie to stay logged in
-
+        document.cookie = "userName=" + qs('input[name=userName]').value;
         window.location.href = "items.html"
         
     }

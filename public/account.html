@@ -72,13 +72,13 @@
 											<ul class="alt">
 												<li>
 													<span id="current-group-name">403-gang</span>
-													<span class="remove-housemate close">&times;</span>
+													<span id="leave-group-btn" class="remove-housemate close">&times;</span>
 												</li>
 
 												<!-- Remove self from group modal -->
-												<div id="remove-from-group-modal" class="modal">
+												<div id="remove-from-group-modal" class="modal hidden">
 													<div class="modal-content">
-													<span id="modal-close" class="close">×</span>
+													<span id="remove-modal-close" class="close">×</span>
 			
 													<h4>Wait!</h4>		
 													<p class="p-no-bottom-margin">Are you sure you want to leave this group?</p>
@@ -96,7 +96,7 @@
 												<form id="create-form" method="post" action="#" class="full-width">
 													<div class="col-6 col-12-xsmall">
 														<label for="new-group-name">Group Name</label>
-														<input type="text" name="housemate-username" id="new-group-name" value="" required>
+														<input type="text" name="new-group-name" id="new-group-name" value="" required>
 														<span class="error" id="new-group-error"></span>
 													</div>
 													<div class="col-6 col-12-medium">
@@ -133,13 +133,13 @@
 													<button class="button primary fit icon solid fas fa-user-slash" id="delete-account-btn">Delete account</button>
 												</div>
 												<!-- Remove self from group modal -->
-												<div id="delete-account-modal" class="modal">
+												<div id="delete-account-modal" class="modal hidden">
 													<div class="modal-content">
-														<span id="modal-close" class="close">×</span>
+														<span id="delete-modal-close" class="close">×</span>
 				
 														<h4>Are you sure you want to delete your account?!</h4>		
 														<p class="p-no-bottom-margin">This action cannot be undone.</p>
-														<button class="button primary fit" id="confirm-remove">Delete Account</button>
+														<button class="button primary fit" id="confirm-delete">Delete Account</button>
 													</div>
 												</div>
 										</div>
