@@ -53,9 +53,10 @@
         res.Items.forEach(item => {
             let li = gen('li')
             li.classList.add('item')
-            li.dataset.purhcaser = item.userName
+            li.dataset.purchaser = item.userName
             li.dataset.expiration = item.expiration
             li.dataset.category = item.category
+            li.dataset.itemID = item.itemID
 
             if (item.shared == 1) {
                 li.dataset.sharing = "shared"
@@ -270,6 +271,7 @@
         let days = this.lastElementChild.dataset.days
 
         let url = "itemView.html?item=" + this.firstElementChild.textContent
+        url += "&itemID=" + this.dataset.itemID
         url += "&purchaser=" + purchaser
         url += "&expiration=" + expiration
         url += "&location=" + location

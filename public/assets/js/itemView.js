@@ -42,7 +42,10 @@
      * be shared amongst all housemates, or exclusively used by the currently logged in user
      */
     function toggleSharing() {
-        fetch(BASE_URL + '/items/shared')
+        let params = new FormData();
+        params.append("userName", urlParams.get('purchaser'))
+        params.append("itemID", urlParams.get('itemID'))
+        fetch(BASE_URL + '/items/shared', {method: "POST", body: params, mode: 'no-cors'})
             .then(checkStatus)
             .catch(handleError)
     }
