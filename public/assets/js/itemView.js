@@ -43,9 +43,13 @@
      */
     function toggleSharing() {
         let params = new FormData();
-        params.append("userName", urlParams.get('purchaser'))
+        let shared = 0;
+        if (urlParams.get('sharing') === "shared") {
+            shared = 1
+        }
+        params.append("shared", shared)
         params.append("itemID", urlParams.get('itemID'))
-        fetch(BASE_URL + '/items/shared', {method: "POST", body: params, mode: 'no-cors'})
+        fetch(BASE_URL + '/items/shared', { method: "POST", body: generateRequestBody(params), mode: 'no-cors'})
             .then(checkStatus)
             .catch(handleError)
     }
@@ -95,8 +99,8 @@
      * @param {object} err - object representing an error that occurred
      */
     function handleError(err) {
-        alert(err)
         if (err.message == ITEM_DNE_ERR) {
+            alert(err)
             window.location.href = "items.html"
         }
     }
