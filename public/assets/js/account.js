@@ -2,8 +2,6 @@
 
 (function() { // for encapsulation and scoping
 
-    const BASE_URL = "http://localhost:4567"
-
     window.addEventListener('load', init)
 
     function init() {
@@ -30,6 +28,9 @@
 
     }
 
+    /**
+     * attempts to remove the logged in user from the inputted group
+     */
     function leaveGroup() {
         let params = new FormData();
         params.append('userName', id('username').textContent)
@@ -59,7 +60,7 @@
     }
 
     /**
-     * deletes the user account and navigates back to the home page
+     * attempts to deletes the logged in user's account and then navigate to the home page
      */
     function deleteAccount() {
         let params = new FormData();
@@ -82,14 +83,15 @@
     }
 
     /**
-     * fetch account info from backend and populate the page
+     * populate the page with the username, first name, last
+     * name, current group, and housemates of the currently logged in user
      */
     function populateAccountInfo() {
 
     }
 
     /**
-     * create a new group, automatically adding the current user to that group
+     * attempts to create a new group, automatically adding the current user to that group
      * 
      * @param {object} e - object representing the submit event 
      */
@@ -130,6 +132,9 @@
 
     }
 
+    /**
+     * removes all error indicators and messages from the page
+     */
     function clearErrors() {
         id('new-group-error').innerHTML = ""
         id('new-group-name').classList.remove('error')
@@ -138,7 +143,7 @@
     }
 
     /**
-     * join an existing group
+     * attempts to add the currently logged in user to an existing group
      * 
      * @param {object} e - object representing the submit event 
      */

@@ -1,8 +1,6 @@
-"use strict";
+"use strict"; // for error reporting
 
 (function() { // for encapsulation and scoping
-
-    const BASE_URL = "http://localhost:4567"
 
     window.addEventListener('load', init)
 
@@ -35,7 +33,8 @@
     }
 
     /**
-     * fetch all current items in the pantry and refrigerator and display them on the page
+     * populate the page with all items in the digital pantry and refrigerator
+     * of the currently logged in user's group (the group may have no other users in it)
      */
     async function populateContent() {
         let userName = getUserName();
@@ -91,6 +90,13 @@
 
     }
 
+    /**
+     * calculates and returns the number of days (rounded to the nearest whole number) between now
+     * and the specified date
+     * 
+     * @param {string} date - string representing a date in the format: "YYYY-MM-DD"
+     * @returns {number} - number of days (rounded to nearest integer) between today and the given date
+     */
     function numDaysUntil(date) {
         const date1 = new Date();
         const date2 = new Date(date);
@@ -107,6 +113,14 @@
         return diffInDays;
     }
 
+    /**
+     * checks the status code of the response from the server, and throws
+     * an appropriate error in the case it recognizes a known error code, or
+     * an otherwise generic error
+     * 
+     * @param {object} res - object representing the response from the server
+     * @returns {object} the unmodified parameter
+     */
     function checkStatus(res) {
         if (res.status == 200) {
             return res
@@ -115,6 +129,9 @@
         }
     }
 
+    /**
+     * hides items from the page that do not fit the selected criteria
+     */
     function itemFilter() {
         if (this.textContent === "Show all") {
             let items = qsa('.item')
@@ -123,49 +140,50 @@
             })
             clearAllChecks('#filter-by-list li')
             id('show-all').prepend(createCheckMark());
-            return;
-        }
+        } else {
+            let items = qsa('.item')
+            items.forEach(item => {
+                item.classList.add('hidden');
+            })
 
-        let items = qsa('.item')
-        items.forEach(item => {
-            item.classList.add('hidden');
-        })
-
-        if (id('show-all').firstElementChild) {
-            id('show-all').firstElementChild.remove();
-        }
-
-        let unchecking = false;
-
-        if (this.firstElementChild) {
-            this.firstElementChild.remove();
-            unchecking = true;
-        }
-
-        if (!unchecking) {
-            this.prepend(createCheckMark());
-        }
-
-        items.forEach(item => {
-            if (id("personal-filter").firstElementChild && item.dataset.sharing === "personal") {
-                item.classList.remove('hidden')
+            if (id('show-all').firstElementChild) {
+                id('show-all').firstElementChild.remove();
             }
-            if (id("shared-filter").firstElementChild && item.dataset.sharing === "shared") {
-                item.classList.remove('hidden')
+
+            let unchecking = false;
+
+            if (this.firstElementChild) {
+                this.firstElementChild.remove();
+                unchecking = true;
             }
-            let daysRemaining = parseInt(item.lastElementChild.dataset.days)
-            if (id("expired-filter").firstElementChild && daysRemaining <= 0) {
-                item.classList.remove('hidden')
+
+            if (!unchecking) {
+                this.prepend(createCheckMark());
             }
-            if (id("expiring-filter").firstElementChild && daysRemaining <= 3 && daysRemaining > 0) {
-                item.classList.remove('hidden')
-            }
-        })
+
+            items.forEach(item => {
+                if (id("personal-filter").firstElementChild && item.dataset.sharing === "personal") {
+                    item.classList.remove('hidden')
+                }
+                if (id("shared-filter").firstElementChild && item.dataset.sharing === "shared") {
+                    item.classList.remove('hidden')
+                }
+                let daysRemaining = parseInt(item.lastElementChild.dataset.days)
+                if (id("expired-filter").firstElementChild && daysRemaining <= 0) {
+                    item.classList.remove('hidden')
+                }
+                if (id("expiring-filter").firstElementChild && daysRemaining <= 3 && daysRemaining > 0) {
+                    item.classList.remove('hidden')
+                }
+            })
+        }
 
     }
 
     /**
-     * clears all check marks from the modal
+     * removes all selections from the given section in the filter/sort popup
+     * 
+     * @param {string} selector - CSS selector corresponding to the DOM element to remove selections from
      */
     function clearAllChecks(selector) {
         let sortings = qsa(selector);
@@ -177,7 +195,7 @@
     }
 
     /**
-     * sort the items in each category based on the selected sorting
+     * organizes items in the pantry and refrigerator according to the selected sorting
      */
     function itemSort() {
         if (this.firstElementChild) { // already checked

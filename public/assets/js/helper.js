@@ -1,3 +1,5 @@
+const BASE_URL = "http://localhost:4567"
+
 function id(id) {
     return document.getElementById(id)
 }

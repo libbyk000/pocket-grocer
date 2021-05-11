@@ -1,8 +1,6 @@
-"use strict";
+"use strict"; // for error reporting
 
-(function() {
-
-     const BASE_URL = "http://localhost:4567/"
+(function() { // for encapsulation and scoping
 
      window.addEventListener('load', init)
 
@@ -10,6 +8,11 @@
           qs('form').addEventListener('submit', createAccount)
      }
 
+     /**
+      * attempts to create an account with the inputted credentials
+      * 
+      * @param {*} e - object representing the submit event
+      */
      function createAccount(e) {
           e.preventDefault();
 
@@ -35,6 +38,14 @@
                })
      }
 
+     /**
+     * checks the status code of the response from the server, and throws
+     * an appropriate error in the case it recognizes a known error code, or
+     * an otherwise generic error
+     *
+     * @param {object} res - object representing the response from the server
+     * @returns {object} - unmodified parameter
+     */
      function checkStatus(res) {
           if (res.status == 200) {
                return res
@@ -45,10 +56,15 @@
           }
      }
 
+     /**
+      * clears all error indicators and messages from the page
+      */
      function clearErrors() {
+          id('username-error').innerHTML = ""
           id('confirm-password-error').innerHTML = ""
           id('password').classList.remove('error')
           id('confirm-password').classList.remove('error')
+          id('username').classList.remove('error')
      }
 
 })()

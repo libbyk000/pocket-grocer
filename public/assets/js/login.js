@@ -1,6 +1,6 @@
-(function() {
+"use strict";
 
-    const BASE_URL = 'http://localhost:4567'
+(function() { // for encapsulation and scoping
 
     window.addEventListener('load', init)
 
@@ -8,26 +8,45 @@
         qs('form').addEventListener('submit', login)
     }
 
+    /**
+     * attempts to log the user in and then navigate to the items page
+     * 
+     * @param {object} e - object representing the submit event
+     */
     function login(e) {
         e.preventDefault();
 
+        clearErrors();
+
         let url = BASE_URL + '/users/login'
         fetch(url, {method: "POST", body: generateRequestBody(new FormData(qs('form'))), mode: 'cors'})
-            .then(clearErrors)
             .then(checkStatus)
             .then(res => res.text())
-            .then(handleResponse)
+            .then(() => {
+                document.cookie = "userName=" + qs('input[name=userName]').value;
+                window.location.href = "items.html"
+            })
             .catch(console.error)
     }
 
-    function clearErrors(res) {
+    /**
+     * clears all error indicators and messages from the page
+     */
+    function clearErrors() {
         id('username-error').innerHTML = "";
         id('password-error').innerHTML = "";
         qs('input[name=userName]').classList.remove('error')
         qs('input[name=password]').classList.remove('error')
-        return res;
     }
 
+    /**
+     * checks the status code of the response from the server, and throws
+     * an appropriate error in the case it recognizes a known error code, or
+     * an otherwise generic error
+     * 
+     * @param {object} res - object representing the response from the server 
+     * @returns {object} - unmodified parameter
+     */
     async function checkStatus(res) {
         if (res.status === 200) {
             return res
@@ -41,13 +60,6 @@
             }
             throw new Error(await res.text());
         }
-    }
-
-    function handleResponse(res) {
-
-        document.cookie = "userName=" + qs('input[name=userName]').value;
-        window.location.href = "items.html"
-        
     }
 
 })();

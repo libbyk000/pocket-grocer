@@ -11,7 +11,8 @@
     }
 
     /**
-     * populate the item information
+     * populate the page with the item's name, purchaser, expiration,
+     * storage location, category, and number of days remaining
      */
     function populateContent() {
 

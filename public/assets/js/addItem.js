@@ -2,8 +2,6 @@
 
 (function() { // for encapsulation and scoping
 
-    const BASE_URL = 'http://localhost:4567'
-
     window.addEventListener('load', init)
 
     function init() {
@@ -26,6 +24,11 @@
         })
     }
 
+    /**
+     * populate the item dropdown with either 1k of the most commonly purchased items,
+     * or a list of items recently purchased by the logged in user.
+     * Based on user input from the radio button titled: "have you purchased this recently?"
+     */
     function updateItemDropdown() {
         id('item-name').innerHTML = "";
         if (this.id === "no") {
@@ -42,7 +45,8 @@
     }
 
     /**
-     * send data from the form to the backend, and then navigate back to the items view
+     * add item to the user's digital pantry/fridge
+     * and then navigate back to the items view
      * 
      * @param {object} e - object representing the submit event
      */
