@@ -54,9 +54,57 @@
             window.location.href = "login.html"
         }
         
-        console.log(res);
+        res.Items.forEach(item => {
+            let li = gen('li')
+            li.classList.add('item')
+            li.dataset.purhcaser = item.userName
+            li.dataset.expiration = item.expiration
+            li.dataset.category = item.category
 
-        // TODO: populate content with items from response
+            if (item.shared == 1) {
+                li.dataset.sharing = "shared"
+            } else {
+                li.dataset.sharing = "personal"
+            }
+
+            let span = gen('span')
+            span.textContent = item.itemName
+
+            let p = gen('p')
+            p.classList.add('align-text-right', 'expiration-indicator')
+            p.dataset.days = numDaysUntil(item.expiration)
+
+            li.append(span)
+            li.append(p)
+            
+            if (item.storage == 0) {
+                li.dataset.location = "Refrigerator"
+                id('fridge-list').appendChild(li)
+            } else { // item.storage == 1
+                li.dataset.location = "Pantry"
+                id('pantry-list').appendChild(li)
+            }
+
+        })
+
+        id('days-btn').click();
+
+    }
+
+    function numDaysUntil(date) {
+        const date1 = new Date();
+        const date2 = new Date(date);
+
+        // One day in milliseconds
+        const oneDay = 1000 * 60 * 60 * 24;
+
+        // Calculating the time difference between two dates
+        const diffInTime = date2.getTime() - date1.getTime();
+
+        // Calculating the no. of days between two dates
+        const diffInDays = Math.round(diffInTime / oneDay);
+
+        return diffInDays;
     }
 
     function checkStatus(res) {
