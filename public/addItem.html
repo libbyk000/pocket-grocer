@@ -68,7 +68,7 @@
 												<!-- Item Name -->												
 												<div class="col-12">
 													<label for="item-name-input">Item Name</label>
-													<input id="item-name-input" type="text" name="item-name" list="item-name" autcomplete="off" required/>
+													<input id="item-name-input" type="text" name="itemName" list="item-name" autcomplete="off" required/>
 													<datalist id="item-name">
 														
 													</datalist>
@@ -84,16 +84,16 @@
 													https://embed.plnkr.co/plunk/B5waxZ
 												    -->
 													<div class="quantity buttons_added">
-														<input type="button" value="-" class="minus">
-														<input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
-														<input type="button" value="+" class="plus">
+														<input id="minus" type="button" value="-" class="minus">
+														<input id="quantity" type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+														<input id="plus" type="button" value="+" class="plus">
 												  </div>			  
 												</div>
 
 												<!-- Expiration Date -->
 												<div class="col-12">
 													<label for="expiration-date">Expiration Date</label>
-													<input type="date" id="expiration-date" name="expiration-date" min="2020-01-01" max="2023-12-31" required>
+													<input type="date" id="expiration-date" name="expiration" min="2020-01-01" max="2023-12-31" required>
 												</div>
 
 												<!-- Storage Location -->
@@ -101,18 +101,18 @@
 													<label>Storage Location</label>
 												</div>
 												<div class="col-6 col-12-xsmall">
-													<input checked="true" type="radio" id="refrigerator-tag" name="storage" value="refrigerator">
+													<input checked="true" type="radio" id="refrigerator-tag" name="storage" value="0">
 													<label for="refrigerator-tag">Refrigerator</label>
 												</div>
 												<div class="col-6 col-12-xsmall">
-													<input type="radio" id="pantry-tag" name="storage" value="pantry">
+													<input type="radio" id="pantry-tag" name="storage" value="1">
 													<label for="pantry-tag">Pantry</label>
 												</div>
 
 												<!-- Category -->
 												<div class="col-12">
 													<label for="item-category">Item Category</label>
-													<select name="item-category" id="item-category" required>
+													<select name="category" id="item-category" required>
 														<option value="">-</option>
 														<option value="Beverages">Beverages</option>
 														<option value="Bread/Bakery">Bread/Bakery</option>
@@ -143,7 +143,7 @@
 													<p>
 														Personal Item
 														<label class="switch">
-															<input type="checkbox" id="personal-checkbox" name="is-personal">
+															<input type="checkbox" id="personal-checkbox">
 															<span class="slider round"></span>
 														</label>
 													</p>
