@@ -1,4 +1,13 @@
 const BASE_URL = "http://localhost:4567"
+const USER_DNE_ERR = "Your username was not found. Please login again."
+const GENERIC_SERVER_ERR = "Something went wrong on our end. Please try again later."
+const ITEM_DNE_ERR = "This item no longer exists."
+const GROUP_DNE_ERR = "The submitted group name was not found."
+const USER_NOT_IN_GROUP_ERR = "You are currently not in a group."
+const GROUP_TAKEN_ERR = "This group name is already in use."
+const USER_TAKEN_ERR = "This username is already in use."
+const ALREADY_IN_GROUP_ERR = "You are already in a group. Please leave before trying to join a new one."
+const INCORRECT_PASSWORD_ERR = "Your username and password do not match."
 
 function id(id) {
     return document.getElementById(id)

@@ -77,11 +77,9 @@
         if (res.status == 200) {
             return res
         } else {
-            let message = "Something went wrong on our end. Please try again later."
+            let message = GENERIC_SERVER_ERR
             if (res.status == 409) {
-                throw new Error("This item no longer exists.")
-            } else if (res.status == 400) {
-                throw new Error("There was an error deleting your item. Please try again later.")
+                message = ITEM_DNE_ERR
             }
             throw new Error(message)
         }
@@ -95,7 +93,7 @@
      */
     function handleError(err) {
         alert(err)
-        if (err.message == "This item no longer exists.") {
+        if (err.message == ITEM_DNE_ERR) {
             window.location.href = "items.html"
         }
     }

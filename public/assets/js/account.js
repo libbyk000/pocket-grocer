@@ -40,11 +40,11 @@
                 if (res.status == 200) {
                     return res
                 } else {
-                    let message = "Something went wrong on our end. Please try again later.";
+                    let message = GENERIC_SERVER_ERROR
                     if (res.status == 409) {
-                        message = 'Your username was not found. Please login again.'
+                        message = USER_DNE_ERROR
                     } else if (res.status == 400) {
-                        message = 'You are currently not in any groups.'
+                        message = USER_NOT_IN_GROUP_ERR
                     }
                     throw new Error(message)
                 }
@@ -54,11 +54,10 @@
             })
             .catch((err) => {
                 alert(err)
-                console.log(err.message)
-                if (err.message == 'Your username was not found. Please login again.') {
+                if (err.message === USER_DNE_ERR) {
                     window.location.href = "login.html"
                 } else {
-                    window.location.href = "account.html"
+                    location.reload();
                 }
             })
     }
@@ -75,7 +74,7 @@
                 if (res.status == 200) {
                     return res
                 }
-                throw new Error('There was an error deleting your account. Please try again later.')
+                throw new Error(GENERIC_SERVER_ERR)
             })
             .then((res) => {
                 window.location.href = "/"
@@ -110,13 +109,13 @@
                 if (res.status == 200) {
                     return res
                 } else {
-                    let message = "Something went wrong on our end. Please try again later."
+                    let message = GENERIC_SERVER_ERR
                     if (res.status == 409) {
-                        message = 'Your username was not found. Please login again.'
+                        message = USER_DNE_ERR
                     } else if (res.status == 412) {
-                        message = '*Group name is already in use.'
+                        message = GROUP_TAKEN_ERR
                     } else if (res.status == 428) {
-                        message = "You are already in a group. Please leave before trying to join a new group."
+                        message = ALREADY_IN_GROUP_ERR
                     }
                     throw new Error(message)
                 }
@@ -125,10 +124,10 @@
                 location.reload();
             })
             .catch((err) => {
-                if (err.message == 'Your username was not found. Please login again.') {
+                if (err.message == USER_DNE_ERR) {
                     alert(err)
                     window.location.href = 'login.html'
-                } else if (err.message == '*Group name is already in use.') {
+                } else if (err.message == GROUP_TAKEN_ERR) {
                     id('new-group-error').textContent = err
                     id('new-group-name').classList.add('error')
                 } else {
@@ -167,13 +166,13 @@
                 if (res.status == 200) {
                     return res
                 } else {
-                    let message = "Something went wrong on our end. Please try again later."
+                    let message = GENERIC_SERVER_ERR
                     if (res.status == 412) {
-                        message = '*Group name does not exist'
+                        message = GROUP_DNE_ERR
                     } else if (res.status == 409) {
-                        message = 'Your username was not found. Please login again.'
+                        message = USER_DNE_ERR
                     } else if (res.status == 428) {
-                        message = "You are already in a group. Please leave before trying to join a new group."
+                        message = ALREADY_IN_GROUP_ERR
                     }
                     throw new Error(message)
                 }
@@ -183,10 +182,10 @@
                 location.reload();
             })
             .catch(err => {
-                if (err.message == '*Group name does not exist') {
+                if (err.message == GROUP_DNE_ERR) {
                     id('existing-group-error').textContent = err
                     id('existing-group-name').classList.add('error')
-                } else if (err.message == 'Your username was not found. Please login again.') {
+                } else if (err.message == USER_DNE_ERR) {
                     alert(err)
                     window.location.href = "login.html"
                 } else {

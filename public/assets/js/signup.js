@@ -29,11 +29,11 @@
                     window.location.href = "items.html"
                })
                .catch(err => {
-                    if (err.message = "There was an error creating your account. Please try again later.") {
-                         alert(err)
-                    } else if (err.message = '*Username taken') {
+                    if(err.message = USER_TAKEN_ERR) {
                          id('username-error').textContent = err.message
                          id('username').classList.add('error')
+                    } else {
+                         alert(err)
                     }
                })
      }
@@ -50,9 +50,9 @@
           if (res.status == 200) {
                return res
           } else {
-               let message = "Something went wrong on our end. Please try again later."
+               let message = GENERIC_SERVER_ERR
                if (res.status == 409) {
-                    message = '*Username taken'
+                    message = USER_TAKEN_ERR
                }
                throw new Error(message)
           }

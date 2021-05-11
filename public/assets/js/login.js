@@ -53,12 +53,12 @@
         } else {
             if (res.status === 409) {
                 qs('input[name=userName]').classList.add('error')
-                id('username-error').textContent = "*Username does not exist"
+                id('username-error').textContent = USER_DNE_ERR
             } else if (res.status === 400) {
                 qs('input[name=password]').classList.add('error')
-                id('password-error').textContent = "*Incorrect password"
+                id('password-error').textContent = INCORRECT_PASSWORD_ERR
             }
-            throw new Error("Something went wrong on our end. Please try again later.");
+            throw new Error(GENERIC_SERVER_ERR);
         }
     }
 

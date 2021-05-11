@@ -45,7 +45,9 @@
             res = await res.json();
         } catch (err) {
             alert(err)
-            window.location.href = "login.html"
+            if (err.message == USER_DNE_ERR) {
+                window.location.href = "login.html"
+            }
         }
         
         res.Items.forEach(item => {
@@ -122,9 +124,9 @@
         if (res.status == 200) {
             return res
         } else {
-            let message = "Something went wrong on our end. Please try again later."
+            let message = GENERIC_SERVER_ERR
             if (res.status == 409) {
-                message = 'Your username was not found. Please login again.'
+                message = USER_DNE_ERR
             }
             throw new Error(message)
         }
