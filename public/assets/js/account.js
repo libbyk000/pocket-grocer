@@ -39,10 +39,14 @@
             .then((res) => {
                 if (res.status == 200) {
                     return res
-                } else if (res.status == 409) {
-                    throw new Error('Your username was not found. Please login again.')
-                } else if (res.status == 400) {
-                    throw new Error('You are currently not in any groups.')
+                } else {
+                    let message = "Something went wrong on our end. Please try again later.";
+                    if (res.status == 409) {
+                        message = 'Your username was not found. Please login again.'
+                    } else if (res.status == 400) {
+                        message = 'You are currently not in any groups.'
+                    }
+                    throw new Error(message)
                 }
             })
             .then((res) => {
@@ -70,16 +74,13 @@
             .then((res) => {
                 if (res.status == 200) {
                     return res
-                } else {
-                    throw new Error('There was an error deleting your account. Please try again later.')
                 }
+                throw new Error('There was an error deleting your account. Please try again later.')
             })
             .then((res) => {
                 window.location.href = "/"
             })
-            .catch((err) => {
-                alert(err)
-            })
+            .catch(alert)
     }
 
     /**
@@ -108,10 +109,16 @@
             .then((res) => {
                 if (res.status == 200) {
                     return res
-                } else if (res.status == 409) {
-                    throw new Error('Your username was not found. Please login again.')
-                } else if (res.status == 400) {
-                    throw new Error('*Group name is already in use.')
+                } else {
+                    let message = "Something went wrong on our end. Please try again later."
+                    if (res.status == 409) {
+                        message = 'Your username was not found. Please login again.'
+                    } else if (res.status == 412) {
+                        message = '*Group name is already in use.'
+                    } else if (res.status == 428) {
+                        message = "You are already in a group. Please leave before trying to join a new group."
+                    }
+                    throw new Error(message)
                 }
             })
             .then((res) => {
@@ -125,8 +132,7 @@
                     id('new-group-error').textContent = err
                     id('new-group-name').classList.add('error')
                 } else {
-                    alert("Something went wrong on our end. Please try again.")
-                    location.reload();
+                    alert(err)
                 }
             })
 
@@ -160,22 +166,31 @@
             .then((res) => {
                 if (res.status == 200) {
                     return res
-                } else if (res.status == 409) {
-                    throw new Error('*Group name does not exist')
-                } else if (res.status == 400) {
-                    throw new Error('Your username was not found. Please login again.')
+                } else {
+                    let message = "Something went wrong on our end. Please try again later."
+                    if (res.status == 412) {
+                        message = '*Group name does not exist'
+                    } else if (res.status == 409) {
+                        message = 'Your username was not found. Please login again.'
+                    } else if (res.status == 428) {
+                        message = "You are already in a group. Please leave before trying to join a new group."
+                    }
+                    throw new Error(message)
                 }
+                    
             })
             .then((res) => {
                 location.reload();
             })
             .catch(err => {
-                if (err == '*Group name does not exist') {
+                if (err.message == '*Group name does not exist') {
                     id('existing-group-error').textContent = err
                     id('existing-group-name').classList.add('error')
-                } else if (err == 'Your username was not found. Please login again.') {
+                } else if (err.message == 'Your username was not found. Please login again.') {
                     alert(err)
                     window.location.href = "login.html"
+                } else {
+                    alert(err)
                 }
             })
 

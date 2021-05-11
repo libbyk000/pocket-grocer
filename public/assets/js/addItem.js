@@ -70,21 +70,23 @@
             .then((res) => {
                 if (res.status == 200) {
                     return res
-                } else if (res.status == 409) {
-                    throw new Error('Your username was not found. Please login again.')
+                } else {
+                    let message = "Something went wrong on our end. Please try again later."
+                    if (res.status == 409) {
+                        message = 'Your username was not found. Please login again.'
+                    }
+                    throw new Error(message)
                 }
+                
             })
             .then((res) => {
-                console.log(res)
                 alert('Item successfully added!')
                 window.location.href = "items.html"
             })
             .catch((err) => {
+                alert(err)
                 if (err.message == "Your username was not found. Please login again.") {
-                    alert(err)
                     window.location.href = "login.html"
-                } else {
-                    console.error(err)
                 }
             })
 

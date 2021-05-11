@@ -121,9 +121,14 @@
     function checkStatus(res) {
         if (res.status == 200) {
             return res
-        } else if (res.status == 409) {
-            throw new Error('Your username was not found. Please login again.')
+        } else {
+            let message = "Something went wrong on our end. Please try again later."
+            if (res.status == 409) {
+                message = 'Your username was not found. Please login again.'
+            }
+            throw new Error(message)
         }
+        
     }
 
     /**

@@ -58,7 +58,7 @@
                 qs('input[name=password]').classList.add('error')
                 id('password-error').textContent = "*Incorrect password"
             }
-            throw new Error(await res.text());
+            throw new Error("Something went wrong on our end. Please try again later.");
         }
     }
 

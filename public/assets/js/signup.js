@@ -49,11 +49,14 @@
      function checkStatus(res) {
           if (res.status == 200) {
                return res
-          } else if (res.status == 409) {
-               throw new Error('*Username taken')
-          } else if (res.status == 400) {
-               throw new Error('There was an error creating your account. Please try again later.')
+          } else {
+               let message = "Something went wrong on our end. Please try again later."
+               if (res.status == 409) {
+                    message = '*Username taken'
+               }
+               throw new Error(message)
           }
+          
      }
 
      /**

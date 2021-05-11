@@ -76,10 +76,14 @@
     function checkStatus(res) {
         if (res.status == 200) {
             return res
-        } else if (res.status == 409) {
-            throw new Error("This item no longer exists.")
-        } else if (res.status == 400) {
-            throw new Error()
+        } else {
+            let message = "Something went wrong on our end. Please try again later."
+            if (res.status == 409) {
+                throw new Error("This item no longer exists.")
+            } else if (res.status == 400) {
+                throw new Error("There was an error deleting your item. Please try again later.")
+            }
+            throw new Error(message)
         }
     }
 
@@ -90,11 +94,9 @@
      * @param {object} err - object representing an error that occurred
      */
     function handleError(err) {
+        alert(err)
         if (err.message == "This item no longer exists.") {
-            alert(err)
             window.location.href = "items.html"
-        } else {
-            alert("There was an error deleting this item. Please try again later.")
         }
     }
 
