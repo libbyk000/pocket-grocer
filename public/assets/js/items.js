@@ -8,11 +8,6 @@
 
         populateContent();
 
-        let items = qsa('.item')
-        items.forEach(item => {
-            item.addEventListener('click', showItemView)
-        })
-
         let sortings = qsa('#sort-by-list li');
         sortings.forEach(el => {
             el.addEventListener('click', itemSort)
@@ -75,6 +70,8 @@
 
             li.append(span)
             li.append(p)
+
+            li.addEventListener('click', showItemView)
             
             if (item.storage == 0) {
                 li.dataset.location = "Refrigerator"
