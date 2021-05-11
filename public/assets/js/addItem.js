@@ -19,7 +19,7 @@
         id('minus').addEventListener('click', () => {
             let currentQuantity = parseInt(id('quantity').value)
             if (currentQuantity > 1) {
-                id('quantity').value = - 1;
+                id('quantity').value = id('quantity').value - 1;
             }
         })
     }

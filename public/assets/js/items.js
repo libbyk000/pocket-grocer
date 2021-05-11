@@ -110,7 +110,7 @@
         // Calculating the no. of days between two dates
         const diffInDays = Math.round(diffInTime / oneDay);
 
-        return diffInDays;
+        return diffInDays + 1;
     }
 
     /**
