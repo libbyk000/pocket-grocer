@@ -15,8 +15,18 @@ Pocket Grocer is a web application that empowers individuals, as well as those l
 6. Tushar - General developer
 
 ### How to build and test system
-GitHub Actions automates this process upon every push to master, however, if one chooses to do so locally:
-To test via CLI navigate to the root directory of the pocket-grocer repo and run
+Ensure that before you do any of these steps, run the following in the root directory of the pocket-grocer repo:
+```
+npm install
+```
+#### Build:
+To build the system manually, navigate to the root directory of the pocket-grocer repo and run:
+```
+npm start
+```
+Now visit localhost:8000 in your browser of choice, and you should see the front end of the pocket grocer website
+#### Test:
+GitHub Actions automates this process upon every push to master, however, if one chooses to do so locally test via CLI navigate to the root directory of the pocket-grocer repo and run:
 ```
 npm install cypress --save-dev
 ```
@@ -24,23 +34,3 @@ Then,
 ```
 node_module/.bin/cypress open
 ```
-
-### Repository Layout
-* .github
-    * main_pocket-grocer-403.yml - build and deploy
-    * main.yml - runs cypress testing scripts
-* public
-    * main html files for all pages
-    * assets
-        * css
-            * stylesheets
-        * js
-            * scripts
-        * sass
-            * compiled css from original template (we don't edit this folder)
-        * webfonts
-            * font awesome fonts
-    * images
-        * contains background images and icons
-    * reports
-        * weekly reports
