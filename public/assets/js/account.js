@@ -6,6 +6,8 @@
 
     function init() {
 
+        id('username').textContent = getUserName();
+
         populateAccountInfo();
         id('create-form').addEventListener('submit', createGroup);
         id('join-form').addEventListener('submit', joinGroup);

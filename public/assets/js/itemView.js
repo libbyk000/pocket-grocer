@@ -62,7 +62,7 @@
 
         let params = new FormData()
         params.append('itemID', urlParams.get('itemID'))
-        fetch(BASE_URL + '/items/delete', {method: "POST", mode:'cors', body: params})
+        fetch(BASE_URL + '/items/delete', { method: "POST", mode: 'no-cors', body: generateRequestBody(params) })
             .then(checkStatus)
             .then(res => {
                 alert("Item successfully deleted.")
@@ -81,7 +81,7 @@
      * @returns {object} the unmodified parameter
      */
     function checkStatus(res) {
-        if (res.status == 200) {
+        if (res.status == 200 || res.status == 0) {
             return res
         } else {
             let message = GENERIC_SERVER_ERR
@@ -99,8 +99,8 @@
      * @param {object} err - object representing an error that occurred
      */
     function handleError(err) {
+        alert(err)
         if (err.message == ITEM_DNE_ERR) {
-            alert(err)
             window.location.href = "items.html"
         }
     }
