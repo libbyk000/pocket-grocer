@@ -8,7 +8,7 @@
 
         id('username').textContent = getUserName();
 
-        populateAccountInfo();
+        fetchAccountInfo();
         id('create-form').addEventListener('submit', createGroup);
         id('join-form').addEventListener('submit', joinGroup);
         id('confirm-remove').addEventListener('click', leaveGroup)
@@ -59,7 +59,7 @@
                 if (err.message === USER_DNE_ERR) {
                     window.location.href = "login.html"
                 } else {
-                    location.reload();
+                    window.location.href = "account.html"
                 }
             })
     }
@@ -88,8 +88,47 @@
      * populate the page with the username, first name, last
      * name, current group, and housemates of the currently logged in user
      */
-    function populateAccountInfo() {
+    function fetchAccountInfo() {
+        let params = new FormData();
+        params.append('userName', getUserName())
 
+        fetch(BASE_URL + '/users/groupdata', {method: "POST", body: generateRequestBody(params), mode:'cors'})
+            .then(res => {
+                if (res.status == 200) {
+                    return res
+                } else if (res.status == 409) {
+                    throw new Error(USER_DNE_ERR)
+                } else {
+                    throw new Error(GENERIC_SERVER_ERR)
+                }
+            })
+            .then(res => res.json())
+            .then(populateAccountInfo)
+            .catch(err => {
+                if (err.message == USER_DNE_ERR) {
+                    alert(err)
+                    window.location.href = "login.html"
+                } else {
+                    console.error(err)
+                }
+            })
+    }
+
+    function populateAccountInfo(res) {
+        res = res.Result[0]
+
+        id('current-group-name').textContent = res.GroupName
+        id('leave-group-btn').classList.remove('hidden')
+
+        res.groupMembers.forEach(member => {
+            if (member != getUserName()) {
+                let li = document.createElement('li')
+                li.textContent = member
+                id('current-housemates-list').appendChild(li)
+            }
+        })
+
+        id('group-container').classList.add('hidden')
     }
 
     /**
@@ -101,8 +140,8 @@
         e.preventDefault();
 
         let params = new FormData();
-        params.append('userName', id('username').textContent)
-        params.append('groupName', id('new-group-name').textContent)
+        params.append('userName', getUserName())
+        params.append('groupName', id('new-group-name').value)
         
         clearErrors();
 
@@ -161,13 +200,14 @@
 
         let params = new FormData();
         params.append('userName', id('username').textContent)
-        params.append('groupName', id('existing-group-name').textContent)
+        params.append('groupName', id('existing-group-name').value)
 
-        fetch(BASE_URL + '/groups/add', {method: "POST", body: params, mode: "no-cors"})
+        fetch(BASE_URL + '/groups/add', {method: "POST", body: generateRequestBody(params), mode: "cors"})
             .then((res) => {
                 if (res.status == 200) {
                     return res
                 } else {
+                    console.log(res['status'])
                     let message = GENERIC_SERVER_ERR
                     if (res.status == 412) {
                         message = GROUP_DNE_ERR
