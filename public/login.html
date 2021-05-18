@@ -57,14 +57,14 @@
 					<!-- Email/Password Form -->
 					<div class="inner">
 						<form method="post" action="#">
-							<input name="userName" type="text" placeholder="Username" id="username" required/>	
+							<input data-cy="username" name="userName" type="text" placeholder="Username" id="username" required/>	
 							<span class="error" id="username-error"></span>
 
-							<input name="password" type="password" placeholder="Password" id="password" required/>
+							<input data-cy="password" name="password" type="password" placeholder="Password" id="password" required/>
 							<span class="error" id="password-error"></span>
 							<button class="button primary fit" id="login-btn">login</button>
 
-							<p class="message">Not registered? <a href="signup.html">Create an account</a></p>
+							<p class="message">Not registered? <a href="signup.html" data-cy=signup>Create an account</a></p>
 						</form>
 					</div>
 				</div>
