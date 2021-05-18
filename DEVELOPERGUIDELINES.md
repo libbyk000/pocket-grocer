@@ -31,7 +31,7 @@ Please clone both repositories before getting started.
         * weekly reports
 
 ## Build process
-To build the system, navigate to the root directory of the pocket-grocer repo first run the following:
+To build the system, open up a shell and navigate to the root directory of the pocket-grocer repo first run the following:
 ```
 npm install
 ```
@@ -54,13 +54,13 @@ This should open a Cypress in a new window - you will see a list of all integrat
 Click "Run [some number] integration specs" and this will run all Cypress tests.
 ![Cypress UI](public/images/cypress_screenshot.png)
 
-
 ## Adding new tests
 Add new tests to cypress/integration folder. Please use the naming convention <name of html file>_tests.js. The [Cypress documentation](https://docs.cypress.io/guides/getting-started/writing-your-first-test#Step-1-Visit-a-page) is extremely useful for getting started.
 
 ## Build/Release
-@FADEL?
-How to build a release of the software. Describe any tasks that are not automated. For example, should a developer update a version number (in code and documentation) prior to invoking the build system? Are there any sanity checks a developer should perform after building a release?
+We don't have a build process since this repo is just a static website. The release process is automated to execute on every commit. As soon as you make a change, commit, and push to this repo, our tests will automatically run and the website will be deployed/released on https://pocket-grocer-403.azurewebsites.net/
+   
+There are no additional tasks that are not automated. A good sanity check is to open up the repository and view the status of our automated Cypress tests to see if they pass before checking your changes on the live version of our web application.
 
 ## Coding conventions
 In order to sanitize coding standards, please follow [this HTML style guide](https://courses.cs.washington.edu/courses/cse154/codequalityguide/html/), [this CSS style guide](https://courses.cs.washington.edu/courses/cse154/codequalityguide/css/), and [this JavaScript style guide](https://courses.cs.washington.edu/courses/cse154/codequalityguide/javascript/).
