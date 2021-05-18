@@ -2,6 +2,7 @@
 
 context('Account Tests', () => {
     beforeEach(() => {
+        cy.setCookie('userName', 'cooper')
         cy.visit('https://pocket-grocer-403.azurewebsites.net/account.html')
     })
 
