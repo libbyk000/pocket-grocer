@@ -1,5 +1,4 @@
-# Before getting started...
-
+# DEVELOPER GUIDELINES
 Thank you so much for your interest in contributing to Pocket Grocer! We appreciate you.
 
 # How to contribute
