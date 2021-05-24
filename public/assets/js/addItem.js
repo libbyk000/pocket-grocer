@@ -39,8 +39,28 @@
             })
         } else { // this.id === "yes"
             
-            // TODO: pull recently purchased items from backend
+            let params = new FormData();
+            params.append('userName', getUserName())
 
+            fetch(BASE_URL + '/items/getRecent', { method: "POST", mode: 'cors', body: generateRequestBody(params)})
+                .then(res => {
+                    let message = GENERIC_SERVER_ERR
+                    if (res.status == 200 || res.status == 0) {
+                        return res
+                    } else if (res.status == 409) {
+                        message = USER_DNE_ERR
+                    }
+                    throw new Error(message);
+                })
+                .then(res => res.json())
+                .then(res => {
+                    let items = res.Items;
+                    items.forEach(item => {
+                        let entry = document.createElement('option')
+                        entry.textContent = item.itemName
+                        id('item-name').appendChild(entry);
+                    })
+                })
         }
     }
 
