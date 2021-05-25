@@ -6,7 +6,7 @@ Thank you so much for your interest in contributing to Pocket Grocer! We appreci
 ## Obtaining source code
 The PocketGrocer web app uses multiple repositories. This is the repository containing all of the front end code, and [this repository](https://github.com/shaurya2109/pg-backend) contains all of the back end code.
 
-Please clone both repositories before getting started.
+**VERY IMPORTANT: Please clone both repositories before getting started.**
 
 ## Directory structure
 * .github/workflows
@@ -41,7 +41,8 @@ npm start
 ```
 Now visit localhost:8000 in your browser of choice, and you should see the front end of the Pocket Grocer website
 
-PLEASE KEEP IN MIND THAT THIS IS ONLY THE FRONT END - YOU NEED TO ALSO RUN THE BACKEND LOCALLY AT THE SAME TIME.
+**PLEASE KEEP IN MIND THAT THIS IS ONLY THE FRONT END - YOU WILL NEED TO ALSO RUN THE BACKEND LOCALLY AT THE SAME TIME.**
+Please clone and follow the instructions listed in the [this repository.](https://github.com/shaurya2109/pg-backend)
 
 ## Test process
 To test the system, use the CLI and navigate to the root directory of the pocket-grocer repo and run:
