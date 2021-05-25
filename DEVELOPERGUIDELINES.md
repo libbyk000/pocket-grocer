@@ -41,6 +41,8 @@ npm start
 ```
 Now visit localhost:8000 in your browser of choice, and you should see the front end of the Pocket Grocer website
 
+PLEASE KEEP IN MIND THAT THIS IS ONLY THE FRONT END - YOU NEED TO ALSO RUN THE BACKEND LOCALLY AT THE SAME TIME.
+
 ## Test process
 To test the system, use the CLI and navigate to the root directory of the pocket-grocer repo and run:
 ```
