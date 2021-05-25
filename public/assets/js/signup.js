@@ -18,14 +18,17 @@
 
           clearErrors();
 
+          let params = new FormData(qs('form'))
+
           if (id('password').value !== id('confirm-password').value) {
                id('confirm-password-error').textContent = "*Passwords must match"
                id('password').classList.add('error')
                id('confirm-password').classList.add('error')
           }
-          fetch(BASE_URL + 'users/add')
+          fetch(BASE_URL + '/users/add', {mode: 'cors', method: "POST", body: generateRequestBody(params) })
                .then(checkStatus)
                .then((res) => {
+                    document.cookie = "userName=" + id('username').value;
                     window.location.href = "items.html"
                })
                .catch(err => {
