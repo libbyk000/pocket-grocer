@@ -25,7 +25,7 @@
                id('password').classList.add('error')
                id('confirm-password').classList.add('error')
           }
-          fetch(BASE_URL + '/users/add', {mode: 'cors', method: "POST", body: generateRequestBody(params) })
+          fetch(BASE_URL + '/users/add', { method: "POST", body: generateRequestBody(params) })
                .then(checkStatus)
                .then((res) => {
                     document.cookie = "userName=" + id('username').value;

@@ -19,7 +19,7 @@
         clearErrors();
 
         let url = BASE_URL + '/users/login'
-        fetch(url, {method: "POST", body: generateRequestBody(new FormData(qs('form'))), mode: 'cors'})
+        fetch(url, {method: "POST", body: generateRequestBody(new FormData(qs('form'))) })
             .then(checkStatus)
             .then(res => res.text())
             .then(() => {

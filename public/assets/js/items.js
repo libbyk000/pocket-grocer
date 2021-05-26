@@ -40,7 +40,7 @@
         params.append('userName', getUserName())
         let res;
         try {
-            res = await fetch(BASE_URL + '/items/get', { method: "POST", body: generateRequestBody(params), mode: 'cors' })
+            res = await fetch(BASE_URL + '/items/get', { method: "POST", body: generateRequestBody(params) })
             checkStatus(res)
             res = await res.json();
         } catch (err) {

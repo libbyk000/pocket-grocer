@@ -37,7 +37,7 @@
         let params = new FormData();
         params.append('userName', id('username').textContent)
 
-        fetch(BASE_URL + '/groups/removeuser', { method: "POST", body: generateRequestBody(params), mode: 'cors'})
+        fetch(BASE_URL + '/groups/removeuser', { method: "POST", body: generateRequestBody(params) })
             .then((res) => {
                 if (res.status == 200) {
                     return res
@@ -52,7 +52,7 @@
                 }
             })
             .then((res) => {
-                window.location.href = "/"
+                window.location.href = "account.html"
             })
             .catch((err) => {
                 alert(err)
@@ -92,7 +92,7 @@
         let params = new FormData();
         params.append('userName', getUserName())
 
-        fetch(BASE_URL + '/users/groupdata', {method: "POST", body: generateRequestBody(params), mode:'cors'})
+        fetch(BASE_URL + '/users/groupdata', { method: "POST", body: generateRequestBody(params) })
             .then(res => {
                 if (res.status == 200) {
                     return res
@@ -145,7 +145,7 @@
         
         clearErrors();
 
-        fetch(BASE_URL + '/groups/create', {method: "POST", body: generateRequestBody(params), mode: 'cors'})
+        fetch(BASE_URL + '/groups/create', {method: "POST", body: generateRequestBody(params) })
             .then((res) => {
                 if (res.status == 200) {
                     return res
@@ -202,7 +202,7 @@
         params.append('userName', id('username').textContent)
         params.append('groupName', id('existing-group-name').value)
 
-        fetch(BASE_URL + '/groups/add', {method: "POST", body: generateRequestBody(params), mode: "cors"})
+        fetch(BASE_URL + '/groups/add', {method: "POST", body: generateRequestBody(params) })
             .then((res) => {
                 if (res.status == 200) {
                     return res

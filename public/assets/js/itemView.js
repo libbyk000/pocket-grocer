@@ -49,7 +49,7 @@
         }
         params.append("shared", shared)
         params.append("itemID", urlParams.get('itemID'))
-        fetch(BASE_URL + '/items/shared', { method: "POST", body: generateRequestBody(params), mode: 'no-cors'})
+        fetch(BASE_URL + '/items/shared', { method: "POST", body: generateRequestBody(params) })
             .then(checkStatus)
             .catch(handleError)
     }
@@ -62,7 +62,7 @@
 
         let params = new FormData()
         params.append('itemID', urlParams.get('itemID'))
-        fetch(BASE_URL + '/items/delete', { method: "POST", mode: 'no-cors', body: generateRequestBody(params) })
+        fetch(BASE_URL + '/items/delete', { method: "POST", body: generateRequestBody(params) })
             .then(checkStatus)
             .then(res => {
                 alert("Item successfully deleted.")

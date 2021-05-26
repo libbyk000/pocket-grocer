@@ -42,7 +42,7 @@
             let params = new FormData();
             params.append('userName', getUserName())
 
-            fetch(BASE_URL + '/items/getRecent', { method: "POST", mode: 'cors', body: generateRequestBody(params)})
+            fetch(BASE_URL + '/items/getRecent', { method: "POST", body: generateRequestBody(params)})
                 .then(res => {
                     let message = GENERIC_SERVER_ERR
                     if (res.status == 200 || res.status == 0) {
@@ -86,7 +86,7 @@
 
         console.log(generateRequestBody(data))
 
-        fetch(BASE_URL + '/items/add', {method: "POST", mode: 'cors', body: generateRequestBody(data)})
+        fetch(BASE_URL + '/items/add', {method: "POST", body: generateRequestBody(data)})
             .then((res) => {
                 if (res.status == 200) {
                     return res
