@@ -114,6 +114,12 @@
             })
     }
 
+    /**
+     * shows/hides the group management based on whether the user is in a group
+     * populates other account and group info, like username and housemates
+     * 
+     * @param {object} res - JSON object holding some account info about logged in user
+     */
     function populateAccountInfo(res) {
         res = res.Result[0]
 
@@ -207,7 +213,6 @@
                 if (res.status == 200) {
                     return res
                 } else {
-                    console.log(res['status'])
                     let message = GENERIC_SERVER_ERR
                     if (res.status == 412) {
                         message = GROUP_DNE_ERR

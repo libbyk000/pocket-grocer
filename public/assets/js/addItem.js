@@ -84,8 +84,6 @@
 
         data.append('userName', getUserName())
 
-        console.log(generateRequestBody(data))
-
         fetch(BASE_URL + '/items/add', {method: "POST", body: generateRequestBody(data)})
             .then((res) => {
                 if (res.status == 200) {
