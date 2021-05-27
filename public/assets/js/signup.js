@@ -32,11 +32,14 @@
                     window.location.href = "items.html"
                })
                .catch(err => {
-                    if(err.message = USER_TAKEN_ERR) {
+                    if (err.message == USER_TAKEN_ERR) {
                          id('username-error').textContent = err.message
                          id('username').classList.add('error')
                     } else {
-                         alert(err)
+                         // TODO: remove this special comment
+                         // This exists in the case that a new user attempts
+                         // to use our service without hosting the backend.
+                         alert("Our backend server is down. You must run it locally in order to use our app.");
                     }
                })
      }

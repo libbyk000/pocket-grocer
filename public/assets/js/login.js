@@ -26,7 +26,12 @@
                 document.cookie = "userName=" + qs('input[name=userName]').value;
                 window.location.href = "items.html"
             })
-            .catch(console.error)
+            .catch(err => {
+                // TODO: remove this special comment
+                // This exists in the case that a new user attempts
+                // to use our service without hosting the backend.
+                alert("Our backend server is down. You must run it locally in order to use our app.");
+            })
     }
 
     /**
