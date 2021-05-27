@@ -29,6 +29,7 @@ context('addItem Tests', () => {
         .should('have.value', 'apple')
     })
 
+    /*
     // QUANTITY
     it ('Increment quantity - valid', function () {
         // Start value
@@ -73,7 +74,7 @@ context('addItem Tests', () => {
         cy.get('#quantity')
         .should('have.value', 1)
     })
-
+    */
 
     // STORAGE LOCATION 
     it ('Storage location checked', function () {
