@@ -45,8 +45,9 @@ npm start
 Now visit localhost:8000 in your browser of choice, and you should see the front end of the Pocket Grocer website and can begin interacting!
 
 PLEASE NOTE THAT IN ORDER FOR THE SYSTEM TO WORK, YOU NEED TO ALSO RUN THE BACKEND LOCALLY. PLEASE SEE THEIR [USER DOCUMENTATION](https://github.com/shaurya2109/pg-backend/blob/master/UserDocumentation.md) FOR INSTRUCTIONS.
+
 ### How to use the system
-1. Create an account on our sign up page.
+1. Use the hamburger icon menu in the top right hand corner of the page, or scroll to the bottom of the landing page to be directed to our sign in page Then, fill out the form fields to create an account.
 2. Log in with your created credentials.
 3. Add a new item to your inventory by selecting the "+" in the bottom nav bar.
 4. Enter the information of your recent groceries.
