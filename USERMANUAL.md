@@ -14,8 +14,22 @@ Pocket Grocer is a web application that empowers individuals, as well as those l
 5. Shaurya - General developer
 6. Tushar - General developer
 
+### Obtaining the Source Code
+Clone this repo (the frontend repo). This method assumes you have already set up an SSH key on your machine linked to your GitHub account. If you have not yet done that, here is [GitHub's instructions for connecting to GitHub with SSH](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh)
+
+Open your terminal and run the following command:
+```
+git clone git@github.com:libbyk000/pocket-grocer.git
+```
+NOTE: You will need to clone the backend repo as well. However, please note that the following instructions are for the front end. Instructions for how to run the backend are located [here](https://github.com/shaurya2109/pg-backend/blob/master/UserDocumentation.md).
+```
+git clone git@github.com:shaurya2109/pg-backend.git
+```
+
 ### Installing software
-Ensure that before you do any of these steps, run the following in the root directory of the pocket-grocer repo:
+Npm is short for Node Package Manager. Ensure that before you do any of the following steps, [download Node here](hhttps://nodejs.org/en/download/).
+
+Then, again open your terminal, navigate to the root directory of pocket-grocer repo and run the following commands (in this order):
 ```
 npm install
 ```
@@ -24,12 +38,13 @@ npm install cypress --save-dev
 ```
 
 ### How to build/run
-To build/run the system, navigate to the root directory of the pocket-grocer repo and run:
+To build/run the system, navigate to the root directory of the pocket-grocer repo in your terminal and run:
 ```
 npm start
 ```
 Now visit localhost:8000 in your browser of choice, and you should see the front end of the Pocket Grocer website and can begin interacting!
 
+PLEASE NOTE THAT IN ORDER FOR THE SYSTEM TO WORK, YOU NEED TO ALSO RUN THE BACKEND LOCALLY. PLEASE SEE THEIR [USER DOCUMENTATION](https://github.com/shaurya2109/pg-backend/blob/master/UserDocumentation.md) FOR INSTRUCTIONS.
 ### How to use the system
 1. Create an account on our sign up page.
 2. Log in with your created credentials.
