@@ -27,7 +27,7 @@ git clone git@github.com:shaurya2109/pg-backend.git
 ```
 
 ### Installing software
-Npm is short for Node Package Manager. Ensure that before you do any of the following steps, [download Node here](hhttps://nodejs.org/en/download/).
+Npm is short for Node Package Manager. Ensure that before you do any of the following steps, [download Node here](https://nodejs.org/en/download/).
 
 Then, again open your terminal, navigate to the root directory of pocket-grocer repo and run the following commands (in this order):
 ```
