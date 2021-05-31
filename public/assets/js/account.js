@@ -121,8 +121,7 @@
      * @param {object} res - JSON object holding some account info about logged in user
      */
     function populateAccountInfo(res) {
-        res = res.Result[0]
-
+        
         id('current-group-name').textContent = res.GroupName
         id('leave-group-btn').classList.remove('hidden')
 
